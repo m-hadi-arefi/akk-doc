@@ -1,47 +1,47 @@
 ---
-title: "Core Platform Pillar"
+title: "Core Platform Architecture Concept"
 lang: en
 translation: /fa/platform/core-platform/
 ---
 
-# Core Platform Pillar
+# Core Platform Architecture Concept
 
-The **Core Platform** provides reusable, enterprise-grade technical and business capabilities to all digital applications across Arian Khodro.
+A frequent strategic error in organizations is conflating a **Core Platform** with an enterprise **ERP**. This document clarifies the architectural boundary, guiding philosophy, and shared services provided by Arian Khodro's Core Platform.
 
-## Guiding Principle: Core Platform ≠ ERP
+---
+
+## 1. Key Distinction: Core Platform vs. ERP
 
 ```text
-┌─────────────────────────────────────────────────────────────┐
-│                    Business Applications                    │
-│   (Vehicle Sales, Workshop Ops, Spare Parts, Customer CRM)  │
-└──────────────────────────────┬──────────────────────────────┘
-                               │ consumes shared capabilities
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│                        Core Platform                        │
-│   Identity • Access • APIs • Events • MDM • Audit • Logs    │
-└──────────────────────────────┬──────────────────────────────┘
-                               │ connects via adapters
-                               ▼
-┌─────────────────────────────────────────────────────────────┐
-│                   Legacy & External Systems                 │
-│                (Tadark Accounting, Banks, SMS)              │
-└─────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────┐
+│                   Application & Business Layer                         │
+│       [CRM System]        [Tadark Accounting System]   [Dealer Portals] │
+└───────────────────────────────────┬────────────────────────────────────┘
+                                    │ Standard JSON / REST APIs
+┌───────────────────────────────────▼────────────────────────────────────┐
+│                    Arian Khodro Core Platform                          │
+│  ┌───────────────────────┐  ┌───────────────────────┐  ┌────────────┐  │
+│  │ Central Identity      │  │ API Gateway           │  │ Master     │  │
+│  │ (SSO & RBAC)          │  │ & Traffic Management  │  │ Data (MDM) │  │
+│  └───────────────────────┘  └───────────────────────┘  └────────────┘  │
+│  ┌───────────────────────┐  ┌───────────────────────┐  ┌────────────┐  │
+│  │ Event Messaging Bus   │  │ Immutable Audit Trail │  │ APM        │  │
+│  │ (Kafka / RabbitMQ)    │  │ & Security Logging    │  │ & Metrics  │  │
+│  └───────────────────────┘  └───────────────────────┘  └────────────┘  │
+└────────────────────────────────────────────────────────────────────────┘
 ```
 
-- **The Core Platform is NOT an ERP**: It does not own specific automotive sales funnels, dealership commission calculations, or workshop repair estimation logic.
-- **Responsibilities**: Providing cross-cutting capabilities (Authentication, Authorization, API Gateway, Event Streaming, Master Data, Audit Trail, Observability).
-- **Non-Responsibilities**: Domain-specific business logic, UI presentation layers, application-specific transaction processing.
+| Dimension | Enterprise ERP | Core Platform |
+| :--- | :--- | :--- |
+| **Definition** | A monolithic commercial software package for finance, HR, and inventory | A modular infrastructure layer connecting all software applications |
+| **Workflow Coupling** | Forces the business to adapt to rigid, pre-built ERP workflows | Imposes no rigid business rules; offers reusable identity, data, and integration services |
+| **Agility & Replaceability** | Migrating or replacing an ERP takes years with massive risk | Highly modular; apps like CRM or accounting can be swapped without touching shared services |
 
-## Platform Capabilities Directory
-- [Core Platform Overview](./overview.md) — Architectural overview, principles, and roadmap.
-- [Identity Service](../identity/overview.md) — Single Sign-On (SSO), OIDC/OAuth 2.0, and MFA.
-- [Authorization Service](../authorization/overview.md) — Centralized RBAC and ABAC permission evaluation.
-- [API Management](../api-management/overview.md) — Enterprise API Gateway, traffic routing, rate limiting.
-- [Event Platform](../event-platform/overview.md) — Enterprise event broker, topic registry, pub/sub.
-- [Master Data Management (MDM)](../master-data/overview.md) — Golden records for Vehicle, Customer, Supplier.
-- [Audit Service](../audit/overview.md) — Immutable, tamper-evident audit logging.
-- [Data Platform](../data-platform/overview.md) — Streaming CDC, Data Lakehouse, analytical reporting.
-- [Integration Platform](../integration/overview.md) — Enterprise adapters, Anti-Corruption Layers, Strangler Fig.
-- [Observability Platform](../observability/overview.md) — Centralized logging, distributed tracing, APM.
-- [Project Management Methodologies](../project-management/) — Evaluation and selection of engineering delivery frameworks.
+---
+
+## 2. Four Pillars of the Core Platform
+
+1. **[Centralized Identity & Access (SSO & RBAC)](/en/platform/core-platform/identity-access)**: Single login across all systems, eliminating fragmented credentials.
+2. **[API Management & Integration Gateway](/en/platform/core-platform/api-gateway)**: Secure, rate-limited communication bridge between Tadark, CRM, and dealership networks.
+3. **[Master Data Management (MDM)](/en/platform/core-platform/master-data)**: The definitive source of truth for Customer, Vehicle (VIN), and Spare Parts master entities.
+4. **Immutable Audit & Observability**: Centralized transaction logging, tamper-proof audit trails, and distributed tracing.

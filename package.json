@@ -10,11 +10,14 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:dev": "vitepress dev --host 127.0.0.1",
+    "dev": "vitepress dev --host 0.0.0.0 --port 3000",
+    "build": "vitepress build && node -e \"import('node:fs').then(fs => { if (fs.existsSync('.vitepress/dist')) fs.cpSync('.vitepress/dist', 'dist', { recursive: true, force: true }); });\"",
+    "preview": "vitepress preview --host 0.0.0.0 --port 3000",
+    "docs:dev": "vitepress dev --host 0.0.0.0 --port 3000",
     "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview",
-    "docs:check-sync": "node scripts/check-docs-sync.mjs"
+    "docs:preview": "vitepress preview --host 0.0.0.0 --port 3000",
+    "docs:check-sync": "node scripts/check-docs-sync.mjs",
+    "lint": "node scripts/check-docs-sync.mjs"
   },
   "devDependencies": {
     "postcss-rtlcss": "^6.0.0",

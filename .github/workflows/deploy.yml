@@ -22,15 +22,22 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci || npm install
 
       - name: Build VitePress
         run: npm run docs:build
 
       - name: Create deployment ZIP
         run: |
-          cd .vitepress/dist
-          zip -r ../../deploy.zip .
+          if [ -d ".vitepress/dist" ]; then
+            cd .vitepress/dist
+          elif [ -d "dist" ]; then
+            cd dist
+          else
+            echo "Error: Neither .vitepress/dist nor dist found!"
+            exit 1
+          fi
+          zip -r "${GITHUB_WORKSPACE:-$PWD/../../}/deploy.zip" .
 
       - name: Upload deploy.zip
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
