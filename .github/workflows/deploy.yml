@@ -16,6 +16,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # نصب pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
 
       # نصب Node
       - name: Setup Node.js
@@ -25,11 +30,6 @@ jobs:
           cache: pnpm
 
 
-      # نصب pnpm
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
 
 
       # نصب پکیج‌ها
