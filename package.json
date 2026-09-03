@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "> **A knowledge base for gradually modernizing the software ecosystem and enterprise architecture of Arian Khodro.**",
   "license": "ISC",
-  "author": "",
+  "author": "mhadi",
   "type": "module",
   "main": "index.js",
   "directories": {
