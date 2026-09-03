@@ -50,8 +50,11 @@ jobs:
       - name: Trigger deployment
         env:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+          BASIC_USER: ${{ secrets.BASIC_USER }}
+          BASIC_PASSWORD: ${{ secrets.BASIC_PASSWORD }}
         run: |
           curl --fail-with-body \
             -X POST \
             -d "token=${DEPLOY_TOKEN}" \
+            -u "${BASIC_USER}:${BASIC_PASSWORD}" \
             https://cigex.ir/deploy.php
