@@ -13,9 +13,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vitepress dev --host 127.0.0.1",
     "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "docs:preview": "vitepress preview",
+    "docs:check-sync": "node scripts/check-docs-sync.mjs"
   },
   "devDependencies": {
+    "postcss-rtlcss": "^6.0.0",
     "vitepress": "^2.0.0-alpha.19"
   }
 }

@@ -1,279 +1,250 @@
-# AGENTS.md
+# Documentation Agent Rules & Governance Policy
 
-This file defines how every agent working on this repository should operate. It is the single source of truth for repository behavior, documentation standards, and project constraints.
+This file defines the permanent governance, operating model, and quality standards for all AI agents and human contributors working on this repository. It is the single source of truth for repository behavior, documentation standards, and multi-language synchronization.
 
----
-
-## Project Nature
-
-This repository contains **ONLY documentation**.
-
-- **Included:** Markdown files (`.md`), documentation assets, diagrams, and navigation through Markdown files.
-- **Excluded:** Application code, backend code, frontend code, scripts, APIs, databases, infrastructure code, automated application logic, and software implementation.
-
-This project must remain **documentation-only**. The purpose of this repository is to **think, analyze, discuss, document, refine, and communicate** the architecture and transformation strategy for Arian Khodro.
-
-### Absolute Rule
-
-Do not write software code. Do not implement the architecture being documented. Do not create application source code. Do not turn architectural concepts into working software.
+> **Absolute Permanent Rule:**  
+> Every documentation change must be reflected in both **English (`docs/en/`)** and **Persian (`docs/fa/`)**.  
+> A document is **never** considered complete if it exists in only one language.
 
 ---
 
-## Documentation Is the Product
+## 1. Purpose
+This repository is the canonical organizational knowledge system for **Arian Khodro**, covering:
+- Enterprise & Solution Architecture
+- Digital Transformation Roadmap (19 stages)
+- Core Platform Shared Capabilities
+- Engineering Standards, Patterns, and Decision Records
 
-The Markdown documentation itself is the primary product of this repository. Every `.md` file is an important part of the knowledge base.
-
-Optimize for:
-
-- Clarity
-- Correctness
-- Consistency
-- Traceability
-- Maintainability
-- Readability
-- Logical structure
-- Professional quality
-
-Do not optimize for generating many documents. A small number of excellent documents is always better than a large number of mediocre ones.
+This repository contains **documentation only**. No software application code, infrastructure scripts, or executable business logic may be implemented here.
 
 ---
 
-## Preserve the Documentation Structure
+## 2. Repository Structure
+The repository strictly enforces a dual-tree bilingual structure:
 
-The existing documentation structure is important. Always preserve:
-
-- Folder structure and document hierarchy
-- Navigation structure and internal links
-- Cross-references and document relationships
-- Naming conventions and section hierarchy
-
-**Do not casually rename or move Markdown files.** Before moving or renaming any document:
-
-1. Find all references to it across the repository.
-2. Update every affected internal link.
-3. Verify there are no broken internal references.
-4. Preserve the logical navigation structure.
-
-Never intentionally leave broken internal links.
-
----
-
-## Internal Linking
-
-Internal linking is a first-class requirement. Whenever a document refers to another document in the repository, use an appropriate relative Markdown link.
-
-**Good:**
-```markdown
-See [Current State](../03-current-state/README.md).
+```text
+docs/
+├── index.md           # Root dual-language entry point and router
+├── en/                # Complete English documentation tree
+│   ├── index.md       # English home
+│   ├── roadmap/       # Transformation roadmap (Stages 00 - 18)
+│   ├── platform/      # Core platform & project delivery methodologies
+│   └── knowledge/     # Architecture patterns, standards, templates, glossary
+├── fa/                # Complete Persian documentation tree
+│   ├── index.md       # Persian home
+│   ├── roadmap/       # نقشه راه تحول (Stages 00 - 18)
+│   ├── platform/      # سکوی مرکزی و متدولوژی‌های تحویل
+│   └── knowledge/     # الگوها، استانداردها، قالب‌ها و واژه‌نامه
+└── .vitepress/        # VitePress config, theme, and locales
 ```
 
-**Avoid:**
-- Hardcoded local filesystem paths
-- Absolute filesystem paths
-- Links that only work on one developer's machine
-- Unnecessary external links
-- Duplicate copies of the same information
-
-When renaming or moving a document, find all references, update all affected links, verify no broken references remain, and preserve the logical navigation structure.
+Every meaningful file in `docs/en/` must have an identical relative counterpart in `docs/fa/`.
 
 ---
 
-## Markdown Best Practices
+## 3. Language Policy
+The repository supports two first-class official languages:
+- 🇬🇧 **English (`en`)**: Primary international and technical engineering language (LTR).
+- 🇮🇷 **Persian (`fa`)**: Primary organizational and regional operational language (RTL).
 
-Always follow professional Markdown best practices:
-
-- Correct heading hierarchy (one H1 per document where appropriate, logical H2/H3/H4 structure)
-- Consistent formatting and terminology
-- Readable paragraphs
-- Proper bullet and numbered lists
-- Tables only when they improve readability
-- Code blocks only when genuinely useful (for documentation examples, not executable code)
-- Meaningful link text and consistent capitalization
-- Consistent naming across the entire repository
-- No unnecessary formatting or excessive nesting
-- No giant walls of text
-
-Do not use Markdown merely as plain text. Use Markdown's structure to make the documentation easy to navigate and understand.
+English and Persian are two language representations of the **exact same knowledge base**. Asymmetry (e.g. English having 100 documents while Persian has 70) is strictly prohibited.
 
 ---
 
-## Do Not Duplicate Information
+## 4. English/Persian Synchronization
+Every document must be linked to its corresponding translation via YAML frontmatter:
 
-Avoid copying the same explanation into multiple documents. If information belongs in another document, put the canonical explanation there and link to it from other documents.
+**English Document (`docs/en/path/file.md`):**
+```yaml
+---
+title: Business Analysis
+lang: en
+translation: /fa/path/file
+---
+```
 
-There should be a clear **single source of truth** for important concepts. If the same concept appears in multiple places, keep the references synchronized or consolidate them.
+**Persian Document (`docs/fa/path/file.md`):**
+```yaml
+---
+title: تحلیل کسب‌وکار
+lang: fa
+translation: /en/path/file
+---
+```
 
 ---
 
-## Documentation Consistency
-
-Maintain consistent terminology across the entire repository. Once a term is chosen, use it consistently:
-
-- Use `Core Platform`, not `Core`, `Core Layer`, `Platform Core`, or `Central Platform` (unless there is a meaningful architectural distinction).
-- Use consistent terms for: `Integration Layer`, `Business Application`, `Master Data`, `Identity`, `Authorization`, `Migration`, `Transformation`, `Legacy System`, `Anti-Corruption Layer`.
-
-Terminology should be deliberate. When introducing a new term, define it and use it consistently thereafter.
-
----
-
-## Facts vs Assumptions
-
-Documentation must clearly distinguish between:
-
-| Label | Meaning |
-|---|---|
-| **FACT** | Confirmed, verified information about the organization |
-| **ASSUMPTION** | Something believed to be true but not yet validated |
-| **HYPOTHESIS** | A proposed explanation or model awaiting evidence |
-| **DECISION** | A choice that has been made and recorded (typically as an ADR) |
-| **OPEN QUESTION** | Something that needs answers before proceeding |
-| **RECOMMENDATION** | A proposed approach that has not yet been decided |
-
-Never present an assumption as an organizational fact. Never invent information about the organization. When information is unknown, explicitly mark it as unknown or requiring validation.
+## 5. Creating New Documents
+Whenever a new document is created, the contributor or agent must:
+1. Create the English version in `docs/en/<path>/<name>.md`.
+2. Create the Persian counterpart in `docs/fa/<path>/<name>.md`.
+3. Add frontmatter with bidirectional translation links (`translation: /fa/...` and `translation: /en/...`).
+4. Add the document to English navigation and sidebar in `.vitepress/config.ts`.
+5. Add the document to Persian navigation and sidebar in `.vitepress/config.ts`.
+6. Verify relative links in both versions.
+7. Run `npm run docs:check-sync` and `npm run docs:build`.
 
 ---
 
-## Architecture Documentation Principles
-
-The documentation should explain not only **WHAT** is proposed, but **WHY** it is proposed. Important architecture decisions must explain:
-
-- Context and problem
-- Alternatives considered
-- Decision and rationale
-- Consequences (what it makes easier, what it makes harder)
-- Risks and mitigation
-- How the decision can be validated
-
-Avoid architecture-by-buzzword. Do not recommend technologies simply because they are modern or popular. Every technology must have a reason.
-
-Prefer: **The simplest architecture that solves the actual organizational problem.**
+## 6. Updating Documents
+Whenever an existing document is modified:
+1. Identify its translation counterpart using the frontmatter `translation` attribute.
+2. Update the counterpart document to ensure semantic and technical equivalence.
+3. If headings or anchors change, update all internal links referencing them in both languages.
+4. If titles change, update navigation and sidebar labels in `.vitepress/config.ts`.
+5. Run `npm run docs:check-sync`.
 
 ---
 
-## Change Discipline
-
-Before editing a Markdown file:
-
-1. Understand its purpose and where it sits in the documentation hierarchy.
-2. Check documents that link to it and documents it links to.
-3. Preserve its role in the overall knowledge structure.
-4. Make the smallest coherent change necessary.
-5. Check whether the change creates contradictions elsewhere.
-
-After editing:
-
-1. Check headings, links, and terminology.
-2. Check references to other documents.
-3. Check for duplicated or contradictory information.
-4. Verify Markdown quality.
-
-Do not preserve a bad idea merely because it was documented previously. The goal is to reach the best possible documentation.
+## 7. Deleting Documents
+When removing obsolete or merged documents:
+1. Identify both the English and Persian versions.
+2. Search all documents for references/links to both paths.
+3. Update or remove incoming links.
+4. Remove both language files simultaneously.
+5. Remove entries from both English and Persian navigation/sidebar in `.vitepress/config.ts`.
+6. Run `npm run docs:check-sync` and `npm run docs:build`.
 
 ---
 
-## No Code Rule
-
-This repository is NOT a software project. Do not:
-
-- Create source code, backend code, or frontend code
-- Create scripts or configuration for an application
-- Implement APIs, services, databases, or infrastructure
-- Build prototypes unless explicitly requested as documentation examples
-
-Architecture diagrams, pseudocode, structured examples, and code snippets may appear inside Markdown when they are necessary to explain an idea. However, they must remain documentation content — not executable project files.
+## 8. Moving/Renaming Documents
+When moving or renaming a document:
+1. Move the English file to its new path.
+2. Move the Persian file to the matching path.
+3. Update frontmatter `translation` paths in both files.
+4. Update all internal links across the repository in both languages.
+5. Update `.vitepress/config.ts` sidebar and navigation for both languages.
+6. Verify no stale routes or broken links remain.
 
 ---
 
-## Structure Before Content
-
-Do not create documents just to increase document count. Every document should have a clear purpose. Before creating a new Markdown document, ask:
-
-> Does this topic deserve its own document?
-
-If not, add it to the appropriate existing document. Prefer a clean, understandable information architecture over a huge number of tiny Markdown files.
-
----
-
-## Cross-Document Integrity
-
-The documentation should behave like one coherent knowledge base, not a collection of unrelated Markdown files. When changing an important concept, consider its impact on every section of the documentation, including:
-
-- Executive Summary
-- Business Context
-- Current State
-- Business Architecture
-- Application Architecture
-- Data Architecture
-- Integration Architecture
-- Technology Architecture
-- Security Architecture
-- Core Platform
-- Legacy Modernization
-- Migration Strategy
-- Target Architecture
-- Roadmap
-- Governance
-- Risks and Assumptions
-- Architecture Decision Records (ADRs)
-
-If a change makes another document incorrect, update that document too.
+## 9. Translation Rules
+- **Technical Accuracy**: Never summarize or omit technical details during translation. Code examples, tables, diagrams, and formulas must remain 100% equivalent.
+- **Natural Persian**: Persian text must be fluent, idiomatic, and grammatically sound. Avoid clumsy machine translations.
+- **Technical Terminology**: Keep official English terms in parentheses upon first or relevant mention (e.g. `معماری سازمانی (Enterprise Architecture)`, `الگوی شاخه خفه‌کننده (Strangler Fig Pattern)`).
+- **Standards & Framework Names**: Preserve official names (e.g. BABOK, TOGAF, BPMN, ISO/IEC/IEEE 42010, RUP, Scrum, Kanban, Kafka, REST, GraphQL).
+- **Code & Formats**: Code blocks, commands, and file paths must remain in English and rendered LTR (`dir="ltr"`).
 
 ---
 
-## Quality Standard
-
-Before considering documentation complete, ask:
-
-- Can a new person understand the project?
-- Can management understand why the project exists?
-- Can an architect understand the proposed architecture?
-- Can a developer understand the architectural boundaries?
-- Can someone understand the migration strategy?
-- Can someone distinguish facts from assumptions?
-- Can someone trace important decisions back to their reasoning?
-- Are internal links working?
-- Is the documentation structure coherent?
-- Is there duplicated or contradictory information?
-- Does every major architectural decision have a clear reason?
-
-If the answer to any of these is no, improve the documentation.
+## 10. VitePress Rules
+- Configure all locales through `.vitepress/config.ts`.
+- Set `dir: 'rtl'` for the `fa` locale and `dir: 'ltr'` for the `en` locale.
+- Enable `cleanUrls: true`.
+- Maintain directory index pages as `index.md` (e.g. `docs/en/roadmap/index.md`).
+- Ensure local search is localized for both English and Persian users.
 
 ---
 
-## Agent Behavior
-
-When working on this repository, act primarily as:
-
-- **Documentation Architect** — Structure and organize the knowledge base.
-- **Enterprise Architecture Analyst** — Analyze and challenge architectural decisions.
-- **Technical Writer** — Write clear, professional, consistent documentation.
-- **Critical Reviewer** — Challenge weak ideas, identify missing information, simplify over-engineered concepts.
-- **Knowledge-Base Maintainer** — Keep the documentation coherent, linked, and up to date.
-
-Do not behave primarily as a software developer. The main responsibility is maintaining and improving the Markdown knowledge base.
-
-Always:
-
-- Protect the documentation structure.
-- Protect internal links.
-- Follow Markdown best practices.
-- Maintain consistency.
-- Challenge unsupported assumptions.
-- Prefer clarity over complexity.
-
-Remember:
-
-> **This repository documents the project. It does not implement the project.**
+## 11. Navigation Rules
+- The top navigation bar in `.vitepress/config.ts` must have matching menu items for both English and Persian.
+- Top-level links for English must point to `/en/...`.
+- Top-level links for Persian must point to `/fa/...`.
+- A language switcher must be visible and functional on all pages.
 
 ---
 
-## Final Rule
+## 12. Sidebar Rules
+- Sidebars for `/en/` and `/fa/` must mirror each other exactly in hierarchy, collapse state, and ordering.
+- Every page in `docs/en/` must be accessible from the English sidebar.
+- Every page in `docs/fa/` must be accessible from the Persian sidebar.
 
-Unless explicitly instructed otherwise, modifications in this repository must be limited to `.md` files.
+---
 
-- Never introduce application code into this repository.
-- Never sacrifice documentation structure for convenience.
-- Never break internal links intentionally.
-- Never allow the Markdown knowledge base to become inconsistent.
+## 13. Internal Link Rules
+- English documents must link exclusively to other English documents (`/en/...` or relative links).
+- Persian documents must link exclusively to other Persian documents (`/fa/...` or relative links).
+- Never use hardcoded absolute filesystem paths (`C:\...` or `/home/...`).
+- Broken links are considered build-breaking defects.
 
-The long-term goal is to produce a professional, coherent, maintainable, interconnected, and publication-ready documentation set for Arian Khodro.
+---
+
+## 14. Document Templates
+Standardize document structures. Standard types include:
+- **Business Case & BRD**: Problem, Objectives, Stakeholders, Scope, Requirements (FR/NFR), Constraints.
+- **Process Definition**: Process Goal, Trigger, Roles, BPMN Flow, Inputs/Outputs, KPIs, Automation candidates.
+- **Solution Architecture**: Context, Quality Attributes, Component View, Sequence, Interfaces, Data Model, Deployment.
+
+---
+
+## 15. Architecture Documentation Rules
+- Follow **ISO/IEC/IEEE 42010:2022** principles (Stakeholders, Concerns, Viewpoints, Views, Decisions).
+- Clearly label statements:
+  - `[FACT]`: Verified reality in Arian Khodro.
+  - `[ASSUMPTION]`: Unverified belief recorded in Assumptions Registry.
+  - `[DECISION]`: Formal choice recorded in an ADR.
+  - `[OPEN QUESTION]`: Unanswered item requiring discovery.
+  - `[RECOMMENDATION]`: Proposed architectural advice.
+
+---
+
+## 16. Pattern Documentation Rules
+Architecture and design pattern documents must use the standard template:
+1. **Title & English Name**
+2. **Problem & Context**
+3. **Solution & Architecture**
+4. **How It Works**
+5. **When to Use / When NOT to Use**
+6. **Trade-offs (Pros & Cons)**
+7. **Concrete Example**
+8. **Relevance to Arian Khodro**
+9. **Related Patterns & References**
+
+---
+
+## 17. Architecture Decision Record (ADR) Rules
+All significant decisions must follow the ADR template:
+- `Status`: Proposed | Accepted | Deprecated | Superseded
+- `Context & Problem Statement`
+- `Decision Drivers`
+- `Considered Options & Alternatives`
+- `Decision Outcome & Rationale`
+- `Consequences (Positive, Negative, Neutral)`
+- `Risk & Mitigation`
+- `Validation Method`
+
+Every ADR must exist in both `docs/en/` and `docs/fa/`.
+
+---
+
+## 18. AI Usage & Lifecycle Governance
+AI is integrated directly into the engineering lifecycle. Every roadmap stage overview must explicitly document:
+1. **AI Assistance**: Where LLMs and agents assist (e.g. code analysis, drafting specifications, test generation).
+2. **Human Decision**: What judgments, architectural decisions, and trade-offs require human ownership.
+3. **Human Approval**: The designated role (Lead Architect, Product Owner, CISO) who signs off.
+4. **Risks**: Hallucinations, security vulnerabilities, ungrounded assumptions, compliance breaches.
+5. **Required Evidence**: Measurable proof (tests, benchmarks, stakeholder sign-offs, ADRs) required before advancement.
+
+---
+
+## 19. Validation Rules
+Before committing any changes:
+1. Run `npm run docs:check-sync` to verify 1:1 language file parity, frontmatter mapping, and internal links.
+2. Verify that no orphan documents or broken markdown links exist.
+3. Verify that code blocks in Persian files maintain `dir="ltr"` formatting.
+
+---
+
+## 20. Build & Test Requirements
+All documentation builds must execute cleanly without warnings or errors:
+```bash
+# Check parity and synchronization
+npm run docs:check-sync
+
+# Build VitePress production bundle
+npm run docs:build
+```
+Never push changes if `docs:build` fails.
+
+---
+
+## 21. Definition of Done
+A documentation task is complete ONLY when:
+- [ ] Both English (`docs/en/`) and Persian (`docs/fa/`) documents are written and fully aligned.
+- [ ] Bidirectional frontmatter `translation` metadata is established.
+- [ ] Navigation and sidebars are updated in `.vitepress/config.ts` for both languages.
+- [ ] Internal links are validated and functional in both language contexts.
+- [ ] Technical terms are preserved in parentheses in Persian documentation.
+- [ ] Roadmap stages include complete AI Lifecycle sections.
+- [ ] `npm run docs:check-sync` passes with 0 errors.
+- [ ] `npm run docs:build` completes with code 0.

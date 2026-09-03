@@ -1,0 +1,182 @@
+/*rtl:begin:ignore*/
+/* ==========================================================================
+   Bilingual & RTL Styling for Arian Khodro VitePress Documentation
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. Typography & General Layout in RTL
+   -------------------------------------------------------------------------- */
+:where([dir="rtl"]),
+:where([dir="rtl"]) body,
+html[dir="rtl"],
+html[dir="rtl"] body {
+  font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Tahoma, sans-serif;
+  letter-spacing: 0 !important;
+  text-align: right;
+  direction: rtl;
+}
+
+/* Headings in Persian */
+:where([dir="rtl"]) .vp-doc h1,
+:where([dir="rtl"]) .vp-doc h2,
+:where([dir="rtl"]) .vp-doc h3,
+:where([dir="rtl"]) .vp-doc h4,
+:where([dir="rtl"]) .vp-doc h5,
+:where([dir="rtl"]) .vp-doc h6 {
+  font-family: 'Vazirmatn', sans-serif;
+  font-weight: 700;
+  text-align: right;
+}
+
+:where([dir="rtl"]) .vp-doc p,
+:where([dir="rtl"]) .vp-doc li {
+  line-height: 1.85;
+}
+
+/* --------------------------------------------------------------------------
+   2. Code Blocks & Syntax Highlighting (Strictly LTR in RTL mode)
+   -------------------------------------------------------------------------- */
+:where([dir="rtl"]) pre,
+:where([dir="rtl"]) code,
+:where([dir="rtl"]) div[class*="language-"],
+:where([dir="rtl"]) .vp-code,
+:where([dir="rtl"]) .vp-code-group,
+:where([dir="rtl"]) .line-numbers-wrapper,
+html[dir="rtl"] pre,
+html[dir="rtl"] code,
+html[dir="rtl"] div[class*="language-"],
+html[dir="rtl"] .vp-code,
+html[dir="rtl"] .vp-code-group,
+html[dir="rtl"] .line-numbers-wrapper {
+  direction: ltr !important;
+  text-align: left !important;
+  font-family: var(--vp-font-family-mono) !important;
+  unicode-bidi: isolate;
+}
+
+/* Inline code inside Persian text */
+:where([dir="rtl"]) :not(pre) > code,
+html[dir="rtl"] :not(pre) > code {
+  direction: ltr !important;
+  text-align: left !important;
+  display: inline-block;
+  unicode-bidi: isolate;
+  padding: 0.15em 0.4em;
+  margin: 0 0.25em;
+  font-family: var(--vp-font-family-mono) !important;
+  font-size: 0.875em;
+  vertical-align: baseline;
+}
+
+/* Code Copy Button in RTL */
+:where([dir="rtl"]) .vp-code-group .tabs,
+html[dir="rtl"] .vp-code-group .tabs {
+  direction: ltr !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. Heading Anchors (# symbol) in RTL
+   -------------------------------------------------------------------------- */
+:where([dir="rtl"]) .vp-doc .header-anchor,
+html[dir="rtl"] .vp-doc .header-anchor {
+  position: absolute;
+  top: 0;
+  right: 0 !important;
+  left: auto !important;
+  margin-right: -0.87em !important;
+  margin-left: 0 !important;
+}
+
+:where([dir="rtl"]) .vp-doc h2 .header-anchor,
+html[dir="rtl"] .vp-doc h2 .header-anchor {
+  top: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   4. Outline / Table of Contents (On this page) in RTL
+   -------------------------------------------------------------------------- */
+:where([dir="rtl"]) .VPDocAsideOutline .content,
+html[dir="rtl"] .VPDocAsideOutline .content {
+  border-right: 1px solid var(--vp-c-divider) !important;
+  border-left: none !important;
+  padding-right: 16px !important;
+  padding-left: 0 !important;
+  text-align: right;
+}
+
+:where([dir="rtl"]) .VPDocAsideOutline .outline-marker,
+html[dir="rtl"] .VPDocAsideOutline .outline-marker {
+  position: absolute;
+  right: -1px !important;
+  left: auto !important;
+}
+
+:where([dir="rtl"]) .VPDocAsideOutline .outline-link,
+html[dir="rtl"] .VPDocAsideOutline .outline-link {
+  text-align: right;
+}
+
+:where([dir="rtl"]) .VPDocAsideOutline .nested,
+html[dir="rtl"] .VPDocAsideOutline .nested {
+  padding-right: 16px !important;
+  padding-left: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. Tables in RTL
+   -------------------------------------------------------------------------- */
+:where([dir="rtl"]) .vp-doc table,
+html[dir="rtl"] .vp-doc table {
+  direction: rtl;
+  text-align: right;
+  width: 100%;
+}
+
+:where([dir="rtl"]) .vp-doc th,
+:where([dir="rtl"]) .vp-doc td,
+html[dir="rtl"] .vp-doc th,
+html[dir="rtl"] .vp-doc td {
+  text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   6. Custom Containers / GitHub Alerts in RTL
+   -------------------------------------------------------------------------- */
+:where([dir="rtl"]) .custom-block,
+html[dir="rtl"] .custom-block {
+  text-align: right;
+  direction: rtl;
+}
+
+/* --------------------------------------------------------------------------
+   7. Diagrams & Architecture SVGs (Remain LTR)
+   -------------------------------------------------------------------------- */
+:where([dir="rtl"]) .mermaid,
+:where([dir="rtl"]) svg.mermaid,
+html[dir="rtl"] .mermaid,
+html[dir="rtl"] svg.mermaid {
+  direction: ltr !important;
+  text-align: center !important;
+}
+
+/* --------------------------------------------------------------------------
+   8. Search Modal in RTL
+   -------------------------------------------------------------------------- */
+:where([dir="rtl"]) .VPLocalSearchBox,
+html[dir="rtl"] .VPLocalSearchBox {
+  direction: rtl;
+  text-align: right;
+}
+
+:where([dir="rtl"]) .VPLocalSearchBox .search-input,
+html[dir="rtl"] .VPLocalSearchBox .search-input {
+  text-align: right;
+}
+
+:where([dir="rtl"]) .VPLocalSearchBox .result,
+html[dir="rtl"] .VPLocalSearchBox .result {
+  text-align: right;
+}
+/*rtl:end:ignore*/
