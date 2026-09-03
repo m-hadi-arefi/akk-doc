@@ -1,0 +1,6 @@
+{
+  "name": "Arian Khodro Architecture Documentation",
+  "description": "Enterprise architecture, digital transformation roadmap, and engineering knowledge base for Arian Khodro.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

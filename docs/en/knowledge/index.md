@@ -1,23 +1,20 @@
 ---
-title: "Knowledge Base Pillar"
+title: "Engineering Knowledge Base & Architecture Standards"
 lang: en
 translation: /fa/knowledge/
 ---
 
-# Knowledge Base Pillar
+# Engineering Knowledge Base & Architecture Standards
 
-The **Knowledge Base** is Arian Khodro's central reference library for software engineering principles, proven architecture patterns, international standards, reusable templates, and decision-making frameworks.
+This section collects the international engineering standards, architectural design patterns, and project delivery methodologies underpinning Arian Khodro's digital transformation. By segregating theoretical and standard specifications into this repository, the main operational roadmaps remain concise, actionable, and executive-focused.
 
-## Sections Directory
+---
 
-| Section | Description |
-|---|---|
-| [Company & Organization](./company/overview.md) | Business domains, company structure, industry background, and terminology. |
-| [Architecture Concepts](./architecture/overview.md) | Fundamental distributed systems and software architecture concepts (CAP, CQRS, Saga). |
-| [Pattern Catalog](./patterns/overview.md) | Standardized patterns across architecture, integration, resilience, and data. |
-| [Standards Catalog](./standards/overview.md) | Authoritative reference standards (BABOK, TOGAF, ISO 42010, BPMN, ITIL). |
-| [Programming & Clean Code](./programming/overview.md) | Engineering standards, SOLID principles, OOP/FP paradigms, and code review rules. |
-| [Document Templates](./templates/overview.md) | Copy/paste ready templates for PRDs, ADRs, Architecture Descriptions, and Postmortems. |
-| [Decision Frameworks](./decision-frameworks/overview.md) | Structured tradeoff frameworks (Build vs Buy, Monolith vs Microservices, Sync vs Async). |
-| [AI in Software Engineering](./ai/overview.md) | Guidelines for prompt engineering, AI coding assistants, MCP tools, and human-in-the-loop governance. |
-| [Glossary](./glossary/overview.md) | Enterprise and automotive software terminology. |
+## Knowledge Repository Directory
+
+| No. | Document Title | Topics Covered | Link |
+| :--- | :--- | :--- | :--- |
+| 1 | **Architecture & Engineering Frameworks** | TOGAF Standard, BABOK Business Analysis, BPMN 2.0 Process Modeling, and ISO/IEC/IEEE 42010 Architecture Description | [View Frameworks](/en/knowledge/frameworks) |
+| 2 | **Architecture & Integration Patterns** | Strangler Fig Pattern, Transactional Outbox, Event-Driven Architecture, and Anti-Corruption Layers (ACL) | [View Patterns](/en/knowledge/patterns) |
+| 3 | **Software Project Methodologies** | Comparative analysis of Agile frameworks (Scrum, Kanban) versus traditional models (RUP, Waterfall) | [View Methodologies](/en/knowledge/project-methodologies) |
+| 4 | **Architecture Decision Record (ADR) Templates** | Standard format for recording and evaluating technical decisions to guarantee institutional traceability | [View ADR Templates](/en/knowledge/adr-templates) |
