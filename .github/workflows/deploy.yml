@@ -1,4 +1,4 @@
-name: Deploy VitePress Documentation
+name: Deploy VitePress
 
 on:
   push:
@@ -6,59 +6,33 @@ on:
       - main
 
 jobs:
-  build:
-    name: Build and Deploy
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-
-      # دریافت کد
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      # نصب pnpm
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
-
-      # نصب Node
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm
+          cache: npm
 
-
-
-
-      # نصب پکیج‌ها
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
+      - name: Build VitePress
+        run: npm run docs:build
 
-      # Build VitePress
-      - name: Build documentation
-        run: pnpm docs:build
-
-
-      # Deploy FTP
-      - name: Upload to cPanel
+      - name: Deploy to cPanel
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-
           server: ${{ secrets.FTP_SERVER }}
-
           username: ${{ secrets.FTP_USERNAME }}
-
           password: ${{ secrets.FTP_PASSWORD }}
-
           port: 21
-
           protocol: ftp
-
           local-dir: .vitepress/dist/
-
           server-dir: /
-
           dangerous-clean-slate: true
