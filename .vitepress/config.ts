@@ -35,38 +35,51 @@ export default defineConfig({
       dir: 'ltr',
       link: '/en/',
       title: 'Arian Khodro',
-      description: 'Digital Transformation, Core Platform & AI Knowledge System',
+      description: 'Enterprise Architectural Assessment, Transformation Roadmap & Standards',
       themeConfig: {
         nav: [
           { text: 'Home', link: '/en/' },
-          { text: 'Transformation Roadmap', link: '/en/roadmap/' },
+          { text: 'Roadmap', link: '/en/roadmap/' },
           { text: 'AI Roadmap', link: '/en/ai-roadmap/' },
-          { text: 'Core Platform', link: '/en/platform/core-platform/' },
-          { text: 'Knowledge Base', link: '/en/knowledge/' }
+          { text: 'Standards', link: '/en/knowledge/' }
         ],
         sidebar: {
           '/en/roadmap/': [
             {
-              text: '1-Year Transformation Roadmap',
+              text: 'Transformation Roadmap (5 Steps)',
               collapsed: false,
               items: [
-                { text: 'Roadmap Overview (3 Four-Month Phases)', link: '/en/roadmap/' },
-                { text: 'Phase 1: Discovery, Audit & Bottlenecks', link: '/en/roadmap/discovery' },
-                { text: 'Phase 1: Tadark Delphi Analysis & Adapter', link: '/en/roadmap/legacy-tadark' },
-                { text: 'Phase 1: Technical Governance & Team', link: '/en/roadmap/team-governance' },
-                { text: 'Phase 3: CRM Integration & Security', link: '/en/roadmap/integration-crm' }
+                { text: 'Roadmap Overview', link: '/en/roadmap/' },
+                { text: 'Step 1: Discovery & Requirements (BABOK/TOGAF/PRD)', link: '/en/roadmap/01-discovery' },
+                { text: 'Step 2: Decision Cycle (Build vs Buy vs Outsource)', link: '/en/roadmap/02-decision-cycle' },
+                { text: 'Step 3: Development & Initial Core Platform', link: '/en/roadmap/03-development-and-core-platform' },
+                { text: 'Step 4: In-House SDLC & Engineering Team', link: '/en/roadmap/04-internal-development-lifecycle' },
+                { text: 'Step 5: Production Launch & Operations', link: '/en/roadmap/05-launch-and-operations' }
               ]
             }
           ],
           '/en/ai-roadmap/': [
             {
-              text: 'Operational AI Strategy',
+              text: 'AI Strategic Roadmap (3 Steps)',
               collapsed: false,
               items: [
-                { text: 'AI Roadmap Overview', link: '/en/ai-roadmap/' },
-                { text: 'Step 1: Management Enablement & Training', link: '/en/ai-roadmap/01-management-training' },
-                { text: 'Step 2: Commercial Needs Assessment', link: '/en/ai-roadmap/02-usecase-discovery' },
-                { text: 'Step 3: Departmental Tool Rollout', link: '/en/ai-roadmap/03-department-rollout' }
+                { text: 'AI Strategy Overview', link: '/en/ai-roadmap/' },
+                { text: 'Step 1: AI Training for Executives', link: '/en/ai-roadmap/01-management-training' },
+                { text: 'Step 2: Enterprise Assessment & AI Discovery', link: '/en/ai-roadmap/02-usecase-discovery' },
+                { text: 'Step 3: Operational Tool Rollout', link: '/en/ai-roadmap/03-department-rollout' }
+              ]
+            }
+          ],
+          '/en/knowledge/': [
+            {
+              text: 'Standards & Architecture Frameworks',
+              collapsed: false,
+              items: [
+                { text: 'Standards Overview', link: '/en/knowledge/' },
+                { text: 'Architecture Frameworks (TOGAF, BABOK, BPMN, ISO 42010)', link: '/en/knowledge/frameworks' },
+                { text: 'Architecture Patterns & C4 Model', link: '/en/knowledge/patterns' },
+                { text: 'Project Delivery Methodologies (Scrum, Kanban, RUP)', link: '/en/knowledge/project-methodologies' },
+                { text: 'Architecture Decision Records (ADR)', link: '/en/knowledge/adr-templates' }
               ]
             }
           ],
@@ -75,23 +88,10 @@ export default defineConfig({
               text: 'Core Platform Architecture',
               collapsed: false,
               items: [
-                { text: 'Core Platform Concept (vs ERP)', link: '/en/platform/core-platform/' },
-                { text: 'Identity & Access Control (RBAC)', link: '/en/platform/core-platform/identity-access' },
+                { text: 'Core Platform Concept (Step 3 Supporting Doc)', link: '/en/platform/core-platform/' },
+                { text: 'Identity & Access Control (SSO/RBAC)', link: '/en/platform/core-platform/identity-access' },
                 { text: 'API Gateway & Event Messaging', link: '/en/platform/core-platform/api-gateway' },
                 { text: 'Master Data Management (MDM)', link: '/en/platform/core-platform/master-data' }
-              ]
-            }
-          ],
-          '/en/knowledge/': [
-            {
-              text: 'Engineering Knowledge Base',
-              collapsed: false,
-              items: [
-                { text: 'Knowledge Base Overview', link: '/en/knowledge/' },
-                { text: 'Architecture Frameworks (TOGAF, BABOK, BPMN)', link: '/en/knowledge/frameworks' },
-                { text: 'Architecture Patterns (Strangler, Outbox)', link: '/en/knowledge/patterns' },
-                { text: 'Project Delivery Methodologies (Scrum, RUP)', link: '/en/knowledge/project-methodologies' },
-                { text: 'Architecture Decision Records (ADRs)', link: '/en/knowledge/adr-templates' }
               ]
             }
           ]
@@ -110,71 +110,71 @@ export default defineConfig({
       lang: 'fa',
       dir: 'rtl',
       link: '/fa/',
-      title: 'آرین خودرو',
-      description: 'داشبورد اجرایی تحول دیجیتال، سکوی مرکزی و هوش مصنوعی',
+      title: 'بررسی وضعیت آرین خودرو',
+      description: 'ارزیابی جامع سازمانی، نقشه راه تحول و استانداردهای مهندسی',
       themeConfig: {
         nav: [
           { text: 'صفحه اصلی', link: '/fa/' },
-          { text: 'نقشه راه تحول', link: '/fa/roadmap/' },
-          { text: 'هوش مصنوعی', link: '/fa/ai-roadmap/' },
-          { text: 'سکوی مرکزی', link: '/fa/platform/core-platform/' },
-          { text: 'پایگاه دانش', link: '/fa/knowledge/' }
+          { text: 'رودمپ', link: '/fa/roadmap/' },
+          { text: 'رودمپ هوش مصنوعی', link: '/fa/ai-roadmap/' },
+          { text: 'استانداردها', link: '/fa/knowledge/' }
         ],
         sidebar: {
           '/fa/roadmap/': [
             {
-              text: 'نقشه راه تحول و گذار ۱ ساله',
+              text: 'رودمپ تحول سازمانی (۵ قدم)',
               collapsed: false,
               items: [
-                { text: 'نمای کلی نقشه راه (۳ فاز ۴ ماهه)', link: '/fa/roadmap/' },
-                { text: 'فاز ۱: شناخت، ممیزی و گلوگاه‌ها', link: '/fa/roadmap/discovery' },
-                { text: 'فاز ۱: تحلیل سیستم تادارک و آداپتور', link: '/fa/roadmap/legacy-tadark' },
-                { text: 'فاز ۱: حاکمیت فنی و تیم توسعه', link: '/fa/roadmap/team-governance' },
-                { text: 'فاز ۳: یکپارچه‌سازی CRM و امنیت داده', link: '/fa/roadmap/integration-crm' }
+                { text: 'نمای کلی رودمپ', link: '/fa/roadmap/' },
+                { text: 'قدم ۱: بررسی، استخراج نیازها و تحلیل معماری', link: '/fa/roadmap/01-discovery' },
+                { text: 'قدم ۲: پیاده‌سازی چرخه تصمیم (بسازیم، بخریم، برونسپاری)', link: '/fa/roadmap/02-decision-cycle' },
+                { text: 'قدم ۳: توسعه نتایج بررسی و کور پلتفرم', link: '/fa/roadmap/03-development-and-core-platform' },
+                { text: 'قدم ۴: راه‌اندازی چرخه کامل توسعه داخلی', link: '/fa/roadmap/04-internal-development-lifecycle' },
+                { text: 'قدم ۵: لانچ، استقرار نهایی و پایش پایدار', link: '/fa/roadmap/05-launch-and-operations' }
               ]
             }
           ],
           '/fa/ai-roadmap/': [
             {
-              text: 'نقشه راه هوش مصنوعی بازرگانی',
+              text: 'رودمپ هوش مصنوعی (۳ گام)',
               collapsed: false,
               items: [
                 { text: 'نمای کلی استراتژی هوش مصنوعی', link: '/fa/ai-roadmap/' },
-                { text: 'گام ۱: آموزش و توانمندسازی مدیران', link: '/fa/ai-roadmap/01-management-training' },
-                { text: 'گام ۲: شناسایی فرآیندهای مستعد هوشمندسازی', link: '/fa/ai-roadmap/02-usecase-discovery' },
-                { text: 'گام ۳: استقرار ابزارهای عملیاتی', link: '/fa/ai-roadmap/03-department-rollout' }
-              ]
-            }
-          ],
-          '/fa/platform/core-platform/': [
-            {
-              text: 'سکوی مرکزی (Core Platform)',
-              collapsed: false,
-              items: [
-                { text: 'مفهوم سکوی مرکزی (تفاوت با ERP)', link: '/fa/platform/core-platform/' },
-                { text: 'احراز هویت و سطوح دسترسی (RBAC)', link: '/fa/platform/core-platform/identity-access' },
-                { text: 'مدیریت APIها و گذرگاه یکپارچگی', link: '/fa/platform/core-platform/api-gateway' },
-                { text: 'مدیریت داده‌های مرجع (MDM)', link: '/fa/platform/core-platform/master-data' }
+                { text: 'گام ۱: آموزش هوش مصنوعی برای مدیران', link: '/fa/ai-roadmap/01-management-training' },
+                { text: 'گام ۲: بررسی کل سیستم و کشف سولوشن‌های AI', link: '/fa/ai-roadmap/02-usecase-discovery' },
+                { text: 'گام ۳: راه‌اندازی و استقرار عملیاتی', link: '/fa/ai-roadmap/03-department-rollout' }
               ]
             }
           ],
           '/fa/knowledge/': [
             {
-              text: 'پایگاه دانش مهندسی و الگوها',
+              text: 'استانداردها و چارچوب‌های مهندسی',
               collapsed: false,
               items: [
-                { text: 'نمای کلی پایگاه دانش', link: '/fa/knowledge/' },
-                { text: 'چارچوب‌های معماری (TOGAF, BABOK, BPMN)', link: '/fa/knowledge/frameworks' },
-                { text: 'الگوهای معماری (Strangler Fig, Outbox)', link: '/fa/knowledge/patterns' },
-                { text: 'چارچوب‌های مدیریت پروژه (اسکرام، RUP)', link: '/fa/knowledge/project-methodologies' },
-                { text: 'قالب‌های مستندسازی تصمیمات (ADR)', link: '/fa/knowledge/adr-templates' }
+                { text: 'نمای کلی استانداردها', link: '/fa/knowledge/' },
+                { text: 'چارچوب‌های معماری (TOGAF, BABOK, BPMN, ISO 42010)', link: '/fa/knowledge/frameworks' },
+                { text: 'الگوهای معماری نرم‌افزار و C4 Model', link: '/fa/knowledge/patterns' },
+                { text: 'متدولوژی‌های مدیریت پروژه (Scrum, Kanban, RUP)', link: '/fa/knowledge/project-methodologies' },
+                { text: 'سوابق تصمیم‌گیری معماری (ADR)', link: '/fa/knowledge/adr-templates' }
+              ]
+            }
+          ],
+          '/fa/platform/core-platform/': [
+            {
+              text: 'معماری سکوی مرکزی (Core Platform)',
+              collapsed: false,
+              items: [
+                { text: 'مفهوم کور پلتفرم (پشتوانه فنی قدم ۳)', link: '/fa/platform/core-platform/' },
+                { text: 'احراز هویت و سطوح دسترسی (SSO / RBAC)', link: '/fa/platform/core-platform/identity-access' },
+                { text: 'مدیریت APIها و گذرگاه یکپارچگی', link: '/fa/platform/core-platform/api-gateway' },
+                { text: 'مدیریت داده‌های مرجع خودرو و مشتری (MDM)', link: '/fa/platform/core-platform/master-data' }
               ]
             }
           ]
         },
         docFooter: {
           prev: 'صفحه قبل',
-          next: 'صفحه بعد'
+          next: 'صفحه بعد',
         },
         outline: {
           label: 'در این صفحه'

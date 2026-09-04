@@ -1,36 +1,48 @@
 ---
-title: "Step 2: Commercial & Automotive AI Needs Assessment"
+title: "Step 2: Enterprise Assessment & AI Solution Discovery"
 lang: en
 translation: /fa/ai-roadmap/02-usecase-discovery
 ---
 
-# Step 2: Commercial & Automotive AI Needs Assessment
+# Step 2: Enterprise Assessment & AI Solution Discovery
 
-In Step 2, the architecture and business teams audit end-to-end supply chain and automotive sales operations to identify processes with the highest manual labor overhead and error rates.
+Following leadership enablement and mindset alignment, the second step conducts an enterprise-wide operational assessment across commercial procurement, finance, customs clearance, inventory warehousing, and after-sales service to identify high-waste manual workflows and formulate targeted AI solutions.
 
 ---
 
-## 1. AI Use Case Prioritization Matrix
+## 1. System-Wide Assessment & AI Candidate Matrix
+
+Architecture and operational leads collaboratively evaluate enterprise value streams to map human error density against implementation feasibility:
 
 ```text
        High Business Value (High ROI)
               ▲
-              │   [3-Way Invoice Matching]    [Customs & Shipping OCR]
-              │      (Production Target)             (Rapid Pilot)
+              │   [3-Way Invoice Matching]    [Customs Dossier & BOL OCR]
+              │     (Priority 1 Solution)        (Priority 1 Solution)
               │
-              │   [Dealership Support Bot]    [Spare Parts Demand Forecast]
-              │      (Secondary Priority)            (Requires Data Aggregation)
+              │   [Dealer Diagnostic Assistant][Spare Parts Demand Forecasting]
+              │     (Priority 2 Solution)        (Priority 2 Solution)
               └────────────────────────────────────────────────────────►
-                 Low Implementation Friction                High Complexity
+                 Low Technical Complexity                High Complexity
 ```
 
 ---
 
-## 2. High-ROI Quick Wins for Arian Khodro
+## 2. Proposed High-Impact AI Solutions for Arian Khodro
 
-1. **Customs Clearance & Shipping Bill Processing**:
-   Import documents, bill of ladings, and clearance declarations contain dense chassis (VIN), engine, and tariff codes where manual transcription errors trigger costly customs penalties.
-2. **Spare Parts Proforma Invoicing & Validation**:
-   Automated verification of supplier part numbers against factory master catalogs, superseding part numbers, and pre-approved import margins.
-3. **Intelligent Workshop Technical Assistant**:
-   Semantic search through factory repair manuals, diagnostic error codes, and technical service bulletins (TSBs) for dealership technicians.
+Based on assessment findings, four strategic solutions deliver rapid and measurable return on investment:
+
+1. **Intelligent OCR & Customs Documentation Extraction**:
+   - Automated parsing of scanned bills of lading (BOL), packing lists, and customs declarations to extract chassis VINs, engine codes, and duty amounts with zero manual typing.
+2. **Automated 3-Way Invoice Reconciliation**:
+   - Algorithmic reconciliation matching foreign purchase orders (PO), warehouse receiving receipts, and vendor invoices to catch line-item discrepancies prior to payment approval.
+3. **Intelligent Dealer Technical Support Assistant**:
+   - Semantic retrieval engine indexing repair manuals, diagnostic error codes (DTC), and factory warranty bulletins to assist dealership service technicians in real time.
+4. **Spare Parts Historical Demand & Reordering Predictor**:
+   - Predictive modeling analyzing seasonal consumption patterns to optimize procurement lot sizes and minimize idle warehouse capital.
+
+---
+
+## 3. Deliverable: Solution Business Case & ROI Catalog
+
+This stage produces a formal business case dossier detailing payback periods, infrastructure overhead, and risk mitigation strategies, equipping executive leadership with decisive clarity before rollout.
