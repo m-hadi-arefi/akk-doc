@@ -29,15 +29,40 @@ jobs:
 
       - name: Create deployment ZIP
         run: |
+          # 1. Locate VitePress dist directory
           if [ -d ".vitepress/dist" ]; then
-            cd .vitepress/dist
+            DIST_DIR=".vitepress/dist"
           elif [ -d "dist" ]; then
-            cd dist
+            DIST_DIR="dist"
           else
             echo "Error: Neither .vitepress/dist nor dist found!"
             exit 1
           fi
-          zip -r "${GITHUB_WORKSPACE:-$PWD/../../}/deploy.zip" .
+
+          # 2. Prepare staging directory
+          STAGING_DIR="deploy_staging"
+          ZIP_PATH="${GITHUB_WORKSPACE:-$PWD}/deploy.zip"
+          rm -rf "$STAGING_DIR" "$ZIP_PATH"
+          mkdir -p "$STAGING_DIR"
+
+          # 3. Copy VitePress built site to staging root (for public_html/)
+          cp -r "$DIST_DIR"/* "$STAGING_DIR"/
+
+          # 4. Copy ONLY English Markdown files into docs/en/ preserving structure
+          mkdir -p "$STAGING_DIR/docs/en"
+          (cd docs/en && find . -type f -name "*.md" -exec cp --parents {} "../../$STAGING_DIR/docs/en/" \;)
+
+          # 5. Parity & Safety Checks
+          if [ -d "$STAGING_DIR/docs/fa" ]; then
+            echo "Error: docs/fa/ detected in staging! Only English docs are allowed."
+            exit 1
+          fi
+          EN_COUNT=$(find "$STAGING_DIR/docs/en" -type f -name "*.md" | wc -l)
+          echo "Verified $EN_COUNT English markdown documents staged for deployment."
+
+          # 6. Package deploy.zip
+          (cd "$STAGING_DIR" && zip -r "$ZIP_PATH" .)
+          rm -rf "$STAGING_DIR"
 
       - name: Upload deploy.zip
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
