@@ -10,6 +10,9 @@ hero:
   tagline: "5-Step Transformation Roadmap • 3-Step AI Strategy • Documented International Standards"
   actions:
     - theme: brand
+      text: "Executive Business Case"
+      link: /en/business-case/
+    - theme: alt
       text: "1. Transformation Roadmap"
       link: /en/roadmap/
     - theme: alt
@@ -20,6 +23,9 @@ hero:
       link: /en/knowledge/
 
 features:
+  - title: "Executive Business Case"
+    details: "The strategic CEO-level rationale: why a bounded, low-risk Discovery phase must precede any major software replacement, ERP procurement, or custom build."
+    link: /en/business-case/
   - title: "1. Roadmap (5-Step Strategy)"
     details: "From discovery & requirements engineering (BABOK/TOGAF/PRD) and decision framework (Build vs Buy vs Outsource) to development, internal engineering team, and live launch."
     link: /en/roadmap/

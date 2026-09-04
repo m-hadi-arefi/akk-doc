@@ -10,6 +10,9 @@ hero:
   tagline: "رودمپ ۵ قدمی تحول • استراتژی ۳ گام هوش مصنوعی • استانداردهای بین‌المللی معماری"
   actions:
     - theme: brand
+      text: "طرح توجیهی کسب‌وکار (Business Case)"
+      link: /fa/business-case/
+    - theme: alt
       text: "۱. رودمپ تحول"
       link: /fa/roadmap/
     - theme: alt
@@ -20,6 +23,9 @@ hero:
       link: /fa/knowledge/
 
 features:
+  - title: "طرح توجیهی کسب‌وکار (Business Case)"
+    details: "توجیه راهبردی در سطح مدیرعامل: چرا اجرای یک فاز شناخت کم‌ریسک و متمرکز، باید مقدم بر هرگونه تصمیم‌گیری یا سرمایه‌گذاری برای جایگزینی سیستم‌ها باشد."
+    link: /fa/business-case/
   - title: "۱. رودمپ (نقشه راه ۵ قدمی)"
     details: "از بررسی و استخراج نیازها (BABOK/TOGAF/PRD) و چرخه تصمیم (بسازیم/بخریم/برونسپاری) تا کدنویسی، تشکیل تیم داخلی و لانچ نهایی."
     link: /fa/roadmap/

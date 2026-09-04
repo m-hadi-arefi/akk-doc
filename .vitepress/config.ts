@@ -39,17 +39,30 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: 'Home', link: '/en/' },
+          { text: 'Business Case', link: '/en/business-case/' },
           { text: 'Roadmap', link: '/en/roadmap/' },
           { text: 'AI Roadmap', link: '/en/ai-roadmap/' },
           { text: 'Standards', link: '/en/knowledge/' }
         ],
         sidebar: {
+          '/en/business-case/': [
+            {
+              text: 'Executive Business Case',
+              collapsed: false,
+              items: [
+                { text: 'Executive Business Case', link: '/en/business-case/' },
+                { text: 'Step 1: Discovery Guidelines', link: '/en/roadmap/01-discovery' },
+                { text: 'Step 2: Decision Cycle', link: '/en/roadmap/02-decision-cycle' }
+              ]
+            }
+          ],
           '/en/roadmap/': [
             {
               text: 'Transformation Roadmap (5 Steps)',
               collapsed: false,
               items: [
                 { text: 'Roadmap Overview', link: '/en/roadmap/' },
+                { text: 'Executive Business Case', link: '/en/business-case/' },
                 { text: 'Step 1: Discovery & Requirements (BABOK/TOGAF/PRD)', link: '/en/roadmap/01-discovery' },
                 { text: 'Step 2: Decision Cycle (Build vs Buy vs Outsource)', link: '/en/roadmap/02-decision-cycle' },
                 { text: 'Step 3: Development & Initial Core Platform', link: '/en/roadmap/03-development-and-core-platform' },
@@ -115,17 +128,30 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: 'صفحه اصلی', link: '/fa/' },
+          { text: 'توجیه کسب‌وکار', link: '/fa/business-case/' },
           { text: 'رودمپ', link: '/fa/roadmap/' },
           { text: 'رودمپ هوش مصنوعی', link: '/fa/ai-roadmap/' },
           { text: 'استانداردها', link: '/fa/knowledge/' }
         ],
         sidebar: {
+          '/fa/business-case/': [
+            {
+              text: 'توجیه کسب‌وکار مدیریتی',
+              collapsed: false,
+              items: [
+                { text: 'طرح توجیهی کسب‌وکار (Business Case)', link: '/fa/business-case/' },
+                { text: 'قدم ۱: راهنمای فاز شناخت و ارزیابی', link: '/fa/roadmap/01-discovery' },
+                { text: 'قدم ۲: چرخه تصمیم‌گیری', link: '/fa/roadmap/02-decision-cycle' }
+              ]
+            }
+          ],
           '/fa/roadmap/': [
             {
               text: 'رودمپ تحول سازمانی (۵ قدم)',
               collapsed: false,
               items: [
                 { text: 'نمای کلی رودمپ', link: '/fa/roadmap/' },
+                { text: 'طرح توجیهی کسب‌وکار (Business Case)', link: '/fa/business-case/' },
                 { text: 'قدم ۱: بررسی، استخراج نیازها و تحلیل معماری', link: '/fa/roadmap/01-discovery' },
                 { text: 'قدم ۲: پیاده‌سازی چرخه تصمیم (بسازیم، بخریم، برونسپاری)', link: '/fa/roadmap/02-decision-cycle' },
                 { text: 'قدم ۳: توسعه نتایج بررسی و کور پلتفرم', link: '/fa/roadmap/03-development-and-core-platform' },
