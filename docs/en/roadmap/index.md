@@ -1,28 +1,47 @@
 ---
-title: "1-Year Transformation Roadmap"
+title: "Arian Khodro Comprehensive Transformation & Engineering Roadmap"
 lang: en
 translation: /fa/roadmap/
 ---
 
-# 1-Year Transformation Roadmap for Arian Khodro
+# Arian Khodro Comprehensive Transformation & Engineering Roadmap
 
-This document outlines the actionable **1-year modernization plan structured into 3 four-month phases** for upgrading the enterprise software architecture of Arian Khodro. The chosen strategy is rooted in **iterative evolution with zero Big-Bang risk**, guaranteeing that financial, sales, inventory, and after-sales service operations remain fully functional without interruption.
-
----
-
-## Three-Phase Delivery Matrix
-
-| Phase | Timeframe | Phase Title | Key Milestones & Deliverables | Detailed Document |
-| :--- | :--- | :--- | :--- | :--- |
-| **Phase 1** | **Months 1–4** | **Discovery, Audit & Transition Architecture** | • Audit manual workflows and organizational bottlenecks<br>• Technical audit of Delphi-based Tadark system and database<br>• Mobilize compact agile team (Lead Architect + 2 Mid-level Developers)<br>• Design Anti-Corruption Layer (ACL) and Tadark Adapter | [Discovery & Bottlenecks](/en/roadmap/discovery)<br>[Tadark Legacy Strategy](/en/roadmap/legacy-tadark)<br>[Team Governance](/en/roadmap/team-governance) |
-| **Phase 2** | **Months 5–8** | **Core Platform Engineering** | • Deploy centralized identity and Role-Based Access Control (RBAC)<br>• Establish API Gateway and event messaging backbone<br>• Implement Master Data Management (MDM) for vehicle and customer identities<br>• Pilot bi-directional data flow with Tadark without touching legacy code | [Core Platform Concept](/en/platform/core-platform/)<br>[Identity & RBAC](/en/platform/core-platform/identity-access)<br>[API Gateway & Messaging](/en/platform/core-platform/api-gateway)<br>[Master Data Management](/en/platform/core-platform/master-data) |
-| **Phase 3** | **Months 9–12** | **CRM Integration, Migration & Rollout** | • Integrate CRM for unified customer and vehicle history<br>• Execute Strangler Fig pattern for autonomous financial and inventory modules<br>• Deploy full CI/CD pipelines, observability dashboards, and audit trails<br>• Operational handover and long-term organizational support | [CRM Integration & Security](/en/roadmap/integration-crm)<br>[Strangler Fig Pattern](/en/knowledge/patterns) |
+This roadmap defines the authoritative execution strategy for modernizing Arian Khodro's software landscape across **5 strategic steps**. The transformation begins with thorough organizational discovery and culminates in sustainable live production operations.
 
 ---
 
-## Executive Outcomes for the CEO
+## 5-Step Transformation Flow Diagram
 
-1. **Elimination of Data Silos**: Customer records and vehicle identification numbers (VIN) are unified across all systems, eliminating redundant manual entry and accounting discrepancies.
-2. **Mitigated Legacy Dependency**: Critical dependency on the legacy Delphi system is decoupled via standard APIs, allowing business logic to migrate smoothly.
-3. **Optimized Headcount and Costs**: By operating with a disciplined team of **one Lead System Architect** and **two Mid-level Developers**, costly team overhead is avoided while maximizing velocity.
-4. **Foundation for AI Integration**: A clean, unified API architecture establishes the requisite prerequisite for automated invoice matching, customs OCR, and executive decision support.
+```text
+┌────────────────────────┐      ┌────────────────────────┐      ┌────────────────────────┐
+│  Step 1: Discovery     │ ───► │  Step 2: Decision Cycle│ ───► │  Step 3: Development   │
+│  • Needs extraction    │      │  • Build in-house      │      │  • Code priorities     │
+│  • BABOK Guide         │      │  • Buy COTS/SaaS       │      │  • Foundational proposal│
+│  • TOGAF ADM Baseline  │      │  • Outsource contracts │      │    Core Platform       │
+└────────────────────────┘      └────────────────────────┘      └───────────┬────────────┘
+                                                                            │
+                                ┌────────────────────────┐                  ▼
+                                │  Step 5: Launch & Ops  │      ┌────────────────────────┐
+                                │  • UAT sign-off        │ ◄─── │  Step 4: Team & SDLC   │
+                                │  • Phased canary roll  │      │  • In-house engineers  │
+                                │  • 24/7 observability  │      │  • CI/CD pipeline      │
+                                └────────────────────────┘      └────────────────────────┘
+```
+
+---
+
+## Roadmap Index & Document Directory
+
+Click on any stage to open its detailed implementation guidelines and specifications:
+
+| Step | Action Scope & Strategic Objectives | Supporting Frameworks | Detailed Document |
+| :--- | :--- | :--- | :--- |
+| **Step 1** | **Discovery, Requirements Engineering & Architecture Assessment**<br>Spreadsheet audits, stakeholder extraction, Tadark Delphi schema analysis, and formulated PRD | BABOK • TOGAF ADM • BPMN 2.0 | [View Step 1 Guidelines →](/en/roadmap/01-discovery) |
+| **Step 2** | **Software Decision Framework (Build vs Buy vs Outsource)**<br>Architectural criteria determining when to write custom code, purchase COTS, or outsource | Architecture Decision Records (ADR) | [View Step 2 Guidelines →](/en/roadmap/02-decision-cycle) |
+| **Step 3** | **Development of Assessment Outcomes & Initial Core Platform**<br>Engineering discovered priorities and implementing the foundational proposal: Core Platform (SSO, API Gateway, MDM) | C4 Model • Clean Architecture | [View Step 3 Guidelines →](/en/roadmap/03-development-and-core-platform) |
+| **Step 4** | **In-House Software Development Lifecycle & Engineering Team**<br>Internal agile engineering cell, coding conventions, CI/CD automated test pipelines | Scrum • Kanban • GitFlow | [View Step 4 Guidelines →](/en/roadmap/04-internal-development-lifecycle) |
+| **Step 5** | **Production Launch, Deployment & Sustainable Operations**<br>User acceptance testing (UAT), zero-downtime canary deployment, user enablement, 24/7 telemetry | Observability • SRE | [View Step 5 Guidelines →](/en/roadmap/05-launch-and-operations) |
+
+---
+
+> 💡 **Architectural Note:** For deep technical blueprints of foundational shared capabilities, inspect the [Core Platform Architecture Documentation](/en/platform/core-platform/).

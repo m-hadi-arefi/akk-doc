@@ -1,83 +1,103 @@
 ---
 layout: home
-title: "Digital Transformation Executive Dashboard"
+title: "Arian Khodro Architecture & Assessment Portal"
 lang: en
 translation: /fa/
 
 hero:
-  name: "Arian Khodro"
-  text: "Digital Transformation & Core Platform Executive Dashboard"
-  tagline: "1-Year Macro Roadmap (3 Four-Month Phases) • Operational AI Roadmap • Core Enterprise Platform"
+  name: "Arian Khodro Assessment"
+  text: "Enterprise Architectural Assessment, Transformation Roadmap & Standards"
+  tagline: "5-Step Transformation Roadmap • 3-Step AI Strategy • Documented International Standards"
   actions:
     - theme: brand
-      text: "Macro Roadmap"
+      text: "1. Transformation Roadmap"
       link: /en/roadmap/
     - theme: alt
-      text: "AI Roadmap"
+      text: "2. AI Roadmap"
       link: /en/ai-roadmap/
     - theme: alt
-      text: "Core Platform"
-      link: /en/platform/core-platform/
+      text: "3. Standards"
+      link: /en/knowledge/
 
 features:
-  - title: "1. Macro Roadmap (3 Phases of 4 Months)"
-    details: "Safe transition from legacy software with zero business downtime, delivered by a high-efficiency agile team (Lead Architect + 2 Mid-level Developers)."
+  - title: "1. Roadmap (5-Step Strategy)"
+    details: "From discovery & requirements engineering (BABOK/TOGAF/PRD) and decision framework (Build vs Buy vs Outsource) to development, internal engineering team, and live launch."
     link: /en/roadmap/
-  - title: "2. Operational AI Roadmap"
-    details: "3 practical steps with rapid ROI from leadership enablement and use case discovery to deploying OCR, automated invoice matching, and decision support."
+  - title: "2. AI Roadmap (3 Execution Steps)"
+    details: "Pragmatic, high-ROI operational rollout across 3 stages: 1. Executive AI Enablement, 2. Enterprise System Assessment & AI Discovery, 3. Production Rollout."
     link: /en/ai-roadmap/
-  - title: "3. Core Enterprise Platform"
-    details: "Shared foundation providing centralized identity (SSO/RBAC), API Gateway, event backbone, and Customer/Vehicle Master Data (MDM) independent of ERP."
-    link: /en/platform/core-platform/
+  - title: "3. Standards (Reference Frameworks)"
+    details: "Formally documented international standards including TOGAF ADM, BABOK Guide, BPMN 2.0, ISO/IEC/IEEE 42010, C4 Model, ADR records, and Agile methodologies."
+    link: /en/knowledge/
 ---
 
-## Strategic Transformation Mission
+## 1. Transformation Roadmap
 
-This portal serves as the authoritative Single Source of Truth for the **Chief Executive Officer and executive leadership of Arian Khodro**, delivering clear, action-oriented oversight of modernization milestones, timelines, and architectural decisions.
+Arian Khodro's software modernization roadmap is an authoritative, step-by-step program organized into **5 strategic stages**, each supported by dedicated specifications and execution guidelines:
 
-Our strategy is grounded in **iterative evolution and a firm rejection of high-risk Big-Bang replacements**. All existing mission-critical operations—including the Tadark accounting system and CRM—continue running uninterrupted with zero operational downtime.
+```text
+┌────────────────────────┐      ┌────────────────────────┐      ┌────────────────────────┐
+│  Step 1: Discovery     │ ───► │  Step 2: Decision Cycle│ ───► │  Step 3: Development   │
+│  • BABOK needs elicitation│   │  • Build in-house?     │      │  • Code priorities     │
+│  • TOGAF architecture  │      │  • Buy commercial COTS?│      │  • Foundational proposal│
+│  • Formalized PRD      │      │  • Outsource contracts?│      │    Core Platform       │
+└────────────────────────┘      └────────────────────────┘      └───────────┬────────────┘
+                                                                            │
+                                ┌────────────────────────┐                  ▼
+                                │  Step 5: Live Launch   │      ┌────────────────────────┐
+                                │  • UAT validation      │ ◄─── │  Step 4: Team & SDLC   │
+                                │  • Phased canary rollout│     │  • In-house engineers  │
+                                │  • 24/7 telemetry      │      │  • CI/CD pipeline      │
+                                └────────────────────────┘      └────────────────────────┘
+```
 
----
-
-## 1. 1-Year Transition & Modernization Roadmap (3 Four-Month Phases)
-
-The macro enterprise roadmap for modernizing our digital landscape is structured as follows:
-
-| Phase & Horizon | Strategic Focus | Key Milestones & Deliverables | Action Documents |
+| Step | Action Scope & Strategic Mission | Supporting Frameworks | Detailed Document |
 | :--- | :--- | :--- | :--- |
-| **Phase 1**<br>*(Months 1–4)* | **Discovery, Audit & Transition Architecture** | • Audit manual workflows and operational bottlenecks<br>• Technical audit of Delphi-based Tadark system and database<br>• Mobilize compact delivery team (Lead Architect + 2 Mid-level Developers)<br>• Design Anti-Corruption Layer (ACL) and Tadark Adapter | • [Discovery & Bottlenecks](/en/roadmap/discovery)<br>• [Tadark System & Adapter Layer](/en/roadmap/legacy-tadark)<br>• [Technical Governance & Team](/en/roadmap/team-governance) |
-| **Phase 2**<br>*(Months 5–8)* | **Core Platform Engineering** | • Build centralized authentication & authorization (SSO & RBAC)<br>• Deploy API Gateway and asynchronous event bus<br>• Implement Master Data Management (MDM) for Vehicle (VIN) and Customer identities<br>• Pilot bi-directional data exchange with Tadark via non-intrusive adapter | • [Core Platform Concept](/en/platform/core-platform/)<br>• [Identity & Access (RBAC)](/en/platform/core-platform/identity-access)<br>• [API Gateway & Messaging](/en/platform/core-platform/api-gateway)<br>• [Master Data Management (MDM)](/en/platform/core-platform/master-data) |
-| **Phase 3**<br>*(Months 9–12)* | **CRM Integration, Migration & Full Rollout** | • Integrate CRM for a unified 360-degree customer and vehicle view<br>• Gradually strangulate isolated financial and inventory modules<br>• Roll out observability, audit trails, and cybersecurity controls<br>• Operational handover and sustained production support | • [CRM Integration & Security](/en/roadmap/integration-crm)<br>• [Complete 1-Year Roadmap](/en/roadmap/) |
+| **Step 1** | **Discovery, Requirements Engineering & Architecture Assessment**<br>Spreadsheet audits, stakeholder extraction, Tadark Delphi schema analysis, and formulated PRD | BABOK • TOGAF • BPMN 2.0 | [View Step 1 Guidelines →](/en/roadmap/01-discovery) |
+| **Step 2** | **Software Decision Framework (Build vs Buy vs Outsource)**<br>Architectural criteria determining when to write custom code, purchase COTS, or outsource | Architecture Decision Records (ADR) | [View Step 2 Guidelines →](/en/roadmap/02-decision-cycle) |
+| **Step 3** | **Development of Assessment Outcomes & Initial Core Platform**<br>Engineering discovered priorities and implementing the foundational proposal: Core Platform (SSO, API Gateway, MDM) | C4 Model • Clean Architecture | [View Step 3 Guidelines →](/en/roadmap/03-development-and-core-platform) |
+| **Step 4** | **In-House Software Development Lifecycle & Engineering Team**<br>Internal agile engineering cell, coding conventions, CI/CD automated test pipelines | Scrum • Kanban • GitFlow | [View Step 4 Guidelines →](/en/roadmap/04-internal-development-lifecycle) |
+| **Step 5** | **Production Launch, Deployment & Sustainable Operations**<br>User acceptance testing (UAT), zero-downtime canary deployment, user enablement, 24/7 telemetry | Observability • SRE | [View Step 5 Guidelines →](/en/roadmap/05-launch-and-operations) |
 
-> 📌 **Understanding the Core Platform:**  
-> Unlike a monolithic ERP, the Core Platform is a shared software infrastructure layer that connects all existing and future applications (such as CRM, sales portals, and dealership tools) using standard APIs, identity services, and clean master data.  
-> 🔗 For full architectural specifications, visit the [Core Platform Overview](/en/platform/core-platform/).
+🔗 [View Comprehensive Transformation Roadmap Overview →](/en/roadmap/)
 
 ---
 
 ## 2. Artificial Intelligence Roadmap (AI Roadmap)
 
-Our AI strategy focuses squarely on practical, high-ROI automotive and commercial operations across three progressive steps:
+The AI strategic roadmap delivers tangible operational productivity and error reduction across **3 sequential steps**:
 
 ```text
-┌──────────────────────────────────────┐     ┌──────────────────────────────────────┐     ┌──────────────────────────────────────┐
-│  Step 1: Executive Enablement        │ ──► │  Step 2: Commercial Discovery        │ ──► │  Step 3: Operational Deployment      │
-│  • Overcome organizational inertia   │     │  • Map time-intensive bottlenecks   │     │  • Deploy customs document OCR       │
-│  • Prompt engineering for commercial │     │  • Prioritize customs & supply chain │     │  • 3-way invoice matching system     │
-│  • Workshops for C-suite & finance   │     │  • Define measurable economic ROI    │     │  • Parts pricing decision assistant  │
-└──────────────────────────────────────┘     └──────────────────────────────────────┘     └──────────────────────────────────────┘
+┌────────────────────────────────┐     ┌────────────────────────────────┐     ┌────────────────────────────────┐
+│  Step 1: Executive Training    │ ──► │  Step 2: System Assessment & AI│ ──► │  Step 3: Operational Rollout   │
+│  • Leadership alignment        │     │  • Process audit across dept   │     │  • Customs BOL OCR engine      │
+│  • Business prompt engineering │     │  • Eliminating data entry waste│     │  • 3-Way invoice reconciliation│
+│  • Overcoming staff resistance │     │  • High-ROI solution selection │     │  • Decision support assistant  │
+└────────────────────────────────┘     └────────────────────────────────┘     └────────────────────────────────┘
 ```
 
-| Step | Core Objective | Concrete Value for the CEO | Action Document |
+| Step | Action Scope & Strategic Focus | Operational Deliverable | Detailed Document |
 | :--- | :--- | :--- | :--- |
-| **Step 1** | **Culture & Practical AI Training for Leadership & Staff** | Equip leaders with realistic capabilities, accelerate commercial communications by 40%, and remove employee resistance. | [View Step 1 Training Program](/en/ai-roadmap/01-management-training) |
-| **Step 2** | **Commercial & Automotive AI Needs Assessment** | Pinpoint error-prone document processes in customs clearance, shipping bills, and spare parts procurement with clear ROI justification. | [View Step 2 Discovery Report](/en/ai-roadmap/02-usecase-discovery) |
-| **Step 3** | **Departmental Rollout of Operational AI Tools** | Deploy 3 tangible tools: customs document OCR, automated 3-way invoice matching, and intelligent pricing decision support. | [View Step 3 Tool Rollout](/en/ai-roadmap/03-department-rollout) |
+| **Step 1** | **AI Training for Executives & Enablement** | Shared executive vocabulary, practical prompt engineering in trade analysis, eliminating organizational resistance | [View Step 1 Guidelines →](/en/ai-roadmap/01-management-training) |
+| **Step 2** | **Enterprise Assessment & AI Solution Discovery** | Comprehensive workflow audit across commercial operations, uncovering bottlenecks, and prioritizing 4 high-ROI AI tools | [View Step 2 Guidelines →](/en/ai-roadmap/02-usecase-discovery) |
+| **Step 3** | **Implementation & Operational AI Rollout** | Production deployment of customs document OCR, automated 3-way invoice matching, and parts pricing assistant | [View Step 3 Guidelines →](/en/ai-roadmap/03-department-rollout) |
 
-🔗 [View Complete AI Strategy Overview](/en/ai-roadmap/)
+🔗 [View Comprehensive AI Strategy Roadmap →](/en/ai-roadmap/)
 
 ---
 
-## 3. Supplementary Engineering Repositories
+## 3. Standards & Engineering Frameworks
 
-- **[Knowledge Base, Patterns & Standards](/en/knowledge/)**: Reference foundations including TOGAF and BABOK, architectural patterns (Strangler Fig, Transactional Outbox), project methodologies (Scrum, RUP), and Architecture Decision Record (ADR) templates.
+All architecture, software engineering, and procurement decisions across Arian Khodro are anchored in formal international standards:
+
+| Standard / Framework | Application Domain & Purpose | Detailed Guidelines |
+| :--- | :--- | :--- |
+| **TOGAF Standard** | Enterprise architecture development method (ADM) across Business, Data, Application, and Technology | [View TOGAF Guidelines →](/en/knowledge/frameworks#1-the-open-group-architecture-framework-togaf) |
+| **BABOK Guide** | Business analysis body of knowledge, stakeholder requirements discovery, and PRD drafting | [View BABOK Guidelines →](/en/knowledge/frameworks#2-business-analysis-body-of-knowledge-babok-guide) |
+| **BPMN 2.0** | International process notation standardizing vehicle logistics, customs clearance, and parts flows | [View BPMN Guidelines →](/en/knowledge/frameworks#3-business-process-model-and-notation-bpmn-20) |
+| **ISO/IEC/IEEE 42010** | Architecture description framework structured around explicit stakeholder viewpoints | [View ISO 42010 Guidelines →](/en/knowledge/frameworks#4-architecture-description-isoicieee-42010) |
+| **C4 Model** | Visual software architecture diagrams at Context, Container, Component, and Code levels | [View Patterns & C4 →](/en/knowledge/patterns) |
+| **Architecture Decision Records (ADR)** | Immutable decision audit trail for Build vs Buy vs Outsource choices | [View ADR Templates →](/en/knowledge/adr-templates) |
+| **Project Delivery Methodologies (Scrum / Kanban / RUP)** | Delivery frameworks tailored to requirements certainty and sprint delivery velocity | [View Methodologies Guidelines →](/en/knowledge/project-methodologies) |
+
+🔗 [View Comprehensive Standards & Knowledge Base →](/en/knowledge/)
