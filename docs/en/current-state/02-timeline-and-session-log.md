@@ -13,6 +13,10 @@ This document logs the structured progression of discovery sessions, on-site ins
 
 ## Day 01: 1405/06/14 — 5 September 2026
 
+::: tip 📋 Operational Work Log Reference
+For the complete technical journal, stakeholder transcripts, and day-by-day notes recorded on this date, refer to the [Mohammad Hadi Arefi — Day 01 Operational Work Log](/en/work-log/arefi/day-01).
+:::
+
 ### Session 1: Arrival, Objectives & Infrastructure Initial Review
 - **Participants:** Mohammad Hadi Arefi (Lead Architect), Mr. Habibi (Network & Helpdesk Lead).
 - **Location:** Arian Khodro Headquarters — IT Office & Server Room.

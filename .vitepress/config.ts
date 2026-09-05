@@ -142,6 +142,7 @@ export default defineConfig({
               text: 'سایر بخش‌ها',
               items: [
                 { text: '📁 ورود به داکیومنت‌های اولیه', link: '/fa/initial-review/' },
+                { text: '📋 گزارش‌های روزانه (Work Log)', link: '/fa/work-log/' },
                 { text: '🏠 بازگشت به صفحه اصلی', link: '/fa/' }
               ]
             }
@@ -251,6 +252,14 @@ export default defineConfig({
                 { text: 'سند ADR-005: خط لوله ترکیبی OCR', link: '/fa/initial-review/07-appendix/adrs/adr-005-document-ocr-pipeline' },
                 { text: 'سند ADR-006: تیم مهندسی داخلی', link: '/fa/initial-review/07-appendix/adrs/adr-006-inhouse-engineering' },
                 { text: 'استانداردها و مراجع قانونی', link: '/fa/initial-review/07-appendix/references' }
+              ]
+            },
+            {
+              text: 'سایر بخش‌ها',
+              items: [
+                { text: '📂 داکیومنت‌های وضعیت فعلی', link: '/fa/current-state/' },
+                { text: '📋 گزارش‌های روزانه (Work Log)', link: '/fa/work-log/' },
+                { text: '🏠 بازگشت به صفحه اصلی', link: '/fa/' }
               ]
             }
           ],
@@ -394,6 +403,7 @@ export default defineConfig({
               text: 'Other Sections',
               items: [
                 { text: '📁 Initial Review Documents', link: '/en/initial-review/' },
+                { text: '📋 Transformation Work Logs', link: '/en/work-log/' },
                 { text: '🏠 Back to Home', link: '/en/' }
               ]
             }
@@ -503,6 +513,14 @@ export default defineConfig({
                 { text: 'ADR-005: Hybrid OCR Pipeline', link: '/en/initial-review/07-appendix/adrs/adr-005-document-ocr-pipeline' },
                 { text: 'ADR-006: In-House Squad', link: '/en/initial-review/07-appendix/adrs/adr-006-inhouse-engineering' },
                 { text: 'Standards & References', link: '/en/initial-review/07-appendix/references' }
+              ]
+            },
+            {
+              text: 'Other Sections',
+              items: [
+                { text: '📂 Current State Documents', link: '/en/current-state/' },
+                { text: '📋 Transformation Work Logs', link: '/en/work-log/' },
+                { text: '🏠 Back to Home', link: '/en/' }
               ]
             }
           ],
