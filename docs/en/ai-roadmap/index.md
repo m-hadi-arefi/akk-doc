@@ -44,18 +44,103 @@ The AI roadmap proceeds through three sequential phases, moving from executive l
 
 ---
 
-## 2. Core Governance Principles for AI Adoption
+## 2. Pragmatic AI Pipeline Architecture (Human-in-the-Loop)
 
-To protect Arian Khodro from hallucinations, financial inaccuracies, and regulatory penalties, four non-negotiable rules govern every AI initiative:
+Autonomous AI decision-making in automotive trade and finance is strictly prohibited. AI is employed exclusively as a structured **Document Intelligence Assistant**:
 
-1. **Mandatory Human-in-the-Loop:** AI will never be granted autonomous write authority to financial accounting ledgers or customs declarations. AI systems extract, compute, and propose; designated human specialists review and authorize.
-2. **Data Maturity Precedes Model Deployment:** If a department cannot provide clean, structured data, AI will not be deployed until the underlying process and data capture workflows are modernized.
-3. **Strict Data Privacy & Sovereignty:** Confidential corporate pricing formulas, customer National IDs, and proprietary supplier contracts must never be transmitted to unvetted, public cloud AI APIs.
-4. **Target Hypotheses, Not Fabricated Promises:** Expected cycle-time improvements and accuracy gains are treated as **Target Hypotheses to be validated during Discovery pilots**, never as guaranteed baseline facts.
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                        GOVERNED AI DOCUMENT PIPELINE ARCHITECTURE                     │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                        │
+│  1. Document Ingestion                                                                 │
+│     [Scanned PDF / TIFF / JPG of Foreign Invoices, Bills of Lading, Customs Slips]    │
+│                                  │                                                     │
+│                                  ▼                                                     │
+│  2. Deterministic Preprocessing                                                        │
+│     [Auto-Deskew, Contrast Enhancement, DPI Standardization, File De-duplication]      │
+│                                  │                                                     │
+│                                  ▼                                                     │
+│  3. OCR & Layout Analysis (Lightweight Open-Source / Local Engine)                     │
+│     [Text Recognition, Bounding Box Extraction, Key-Value Pair Clustering]             │
+│                                  │                                                     │
+│                                  ▼                                                     │
+│  4. Schema Mapping & Deterministic Validation                                          │
+│     [Regex extraction for 17-char VIN, Customs Tariff Codes, Currency Amounts]         │
+│     • Validation Checks: VIN Checksum, Proforma Arithmetic Sums, Currency Cross-checks │
+│                                  │                                                     │
+│                ┌─────────────────┴─────────────────┐                                   │
+│                │ Does document pass all checks?    │                                   │
+│                └────────┬─────────────────┬────────┘                                   │
+│                    YES  │                 │  NO (Degraded scan / Math mismatch)        │
+│                         ▼                 ▼                                            │
+│  5. Side-by-Side Review UI          6. Safe Fallback Workflow                          │
+│     ┌────────────────────────┐         ┌────────────────────────┐                      │
+│     │ Scanned PDF │ Extracted│         │ Route entire document  │                      │
+│     │   on Left   │ Fields on│         │ directly to manual     │                      │
+│     │             │  Right   │         │ clerk queue.           │                      │
+│     └───────────┬────────────┘         │ Zero model guessing.   │                      │
+│                 │                      └────────────────────────┘                      │
+│                 ▼                                                                      │
+│  7. Mandatory Human Approval & Telemetry Audit Log                                     │
+│     [Clerk verifies or edits ➔ Click 'Approve' ➔ Signed Audit Log recorded]            │
+│                                  │                                                     │
+│                                  ▼                                                     │
+│  8. Transactional Database Ingestion (PostgreSQL Core Platform)                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
-## 3. Directory of AI Roadmap Guides
+## 3. Real Performance Metrics (Replacing "Confidence Scores")
+
+Internal model "Confidence Scores" are uncalibrated and misleading. Every AI deployment must be monitored using strictly empirical, user-centric operational metrics:
+
+| Metric | Definition & Formula | Target Benchmark | Why It Matters |
+| :--- | :--- | :---: | :--- |
+| **Field-Level Extraction Accuracy** | Verified correct extracted fields divided by total target fields on invoice. | **> 94%** on clean scans | Prevents silent clerical errors in chassis numbers and currency rates. |
+| **Human Override Rate** | Percentage of extracted fields that a human clerk manually edits before saving. | **< 12%** | If humans override >30% of fields, the model adds friction instead of saving time. |
+| **End-to-End Cycle Time** | Time from document upload to final transactional database commit. | **< 2 minutes** per dossier | Baseline manual entry currently takes 20–45 minutes per shipment folder. |
+| **Cost Per Processed Document** | Total monthly GPU/server compute cost divided by count of processed dossiers. | **< $0.25** per document | Guarantees the AI solution is dramatically cheaper than manual typing. |
+
+---
+
+## 4. AI Economics & The Simplest Solution Litmus Test
+
+Before authorizing any AI pilot, the project team must test the **Simplest Solution Rule**:
+
+> **"Can this operational problem be solved using a standard digital web form, an Excel macro, or a deterministic SQL validation script?"**
+
+If a simple Python script or regular-expression parser achieves 90% of the benefit at 10% of the cost, **the AI solution is rejected**.
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                   AI ECONOMIC COMPARISON                               │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│  Option A: Commercial AI Agent Platform ($30,000 license + cloud per-page fees)        │
+│  • High cloud egress costs, recurring USD subscription, unpredictable token billing.   │
+│  • High risk of currency fluctuations in Iran.                                         │
+│                                                                                        │
+│  Option B: Pragmatic In-House OCR Pipeline ($1,500 local hardware upgrade, zero license)│
+│  • Open-source OCR (Tesseract / PaddleOCR / LayoutLM) running locally in container.    │
+│  • Predictable zero marginal cost per page; 100% data sovereignty; zero cloud leak.     │
+│  • VERDICT: APPROVED FOR OPERATIONAL PILOTS.                                           │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 5. AI Governance & Data Privacy Rules
+
+To protect corporate financial secrets and comply with national regulations, three non-negotiable rules govern every AI workflow:
+
+1. **Zero Exposure of Proprietary Financial Data:** Wholesale vehicle purchase prices, negotiated supplier margins, and banking channel vouchers must **never be sent to public cloud LLM endpoints**.
+2. **Customer PII Scrubbing:** National IDs, residential addresses, and phone numbers must be masked prior to any secondary document analysis.
+3. **Audit Log & Model Drift Tracking:** Every human override is logged and fed back into periodic model evaluation. If document formatting changes (e.g., foreign supplier updates invoice layout), the system must alert administrators rather than producing garbage outputs.
+
+---
+
+## 6. Directory of AI Roadmap Guides
 
 | Step | Action Scope & Strategic Objectives | Operational Deliverable | Detailed Guide |
 | :--- | :--- | :--- | :--- |

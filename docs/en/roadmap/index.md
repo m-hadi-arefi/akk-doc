@@ -91,7 +91,75 @@ Click on any stage below to inspect its detailed operational guidelines, methodo
 
 ---
 
-## 4. Governance Decision Gates Across the Roadmap
+## 4. The 90-Day Concrete Execution Plan (Q1 Deliverables)
+
+To replace speculative multi-year horizons with immediate operational momentum, the first quarter operates under a strict **90-Day Deliverable Cadence**:
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                          THE 90-DAY FIRST-VALUATION CADENCE                            │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│  MONTH 1: Discovery & Evidence Gathering                                               │
+│  • Comprehensive data dictionary of Tadark SQL tables, triggers, and stored procedures.│
+│  • Precise time-and-motion study across top 5 bottlenecks (Customs, Handover, Parts).  │
+│  • Complete inventory of all active spreadsheets, Excel macros, and physical forms.    │
+│  • Gate Deliverable: Formal BRD/PRD + Empirical Bottleneck Heatmap.                    │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│  MONTH 2: Architecture Blueprint & Target State Validation                             │
+│  • Final Modular Monolith domain boundary specifications and REST API contracts.       │
+│  • Working Proof-of-Concept (POC): Read-only Tadark SQL replica adapter.               │
+│  • Working POC: Side-by-side OCR extraction for foreign proforma & Bill of Lading.     │
+│  • Gate Deliverable: Technical Spikes Validated + Production Architecture Sign-Off.   │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│  MONTH 3: First Value Delivery & Decision Gate 2 Review                                │
+│  • Live Pilot Launch: Digital Customs Clearance & VIN Landed-Cost Tracking Module.     │
+│  • Side-by-side parallel run: Compare pilot system against legacy paper workflow.      │
+│  • Verified labor hours saved, error rates caught, and dealership satisfaction report. │
+│  • Gate Deliverable: Board Presentation + Go/No-Go Decision for Q2 Scale-Up.          │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 5. The 12-Month Realistic Modernization Schedule
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                           12-MONTH ENTERPRISE TIMELINE                                 │
+├──────────────────────────┬──────────────────────────┬──────────────────────────────────┤
+│ QUARTER                  │ PRIMARY SCOPE            │ TARGET BUSINESS VALUE DELIVERABLE│
+├──────────────────────────┼──────────────────────────┼──────────────────────────────────┤
+│ Q1: Discovery & Pilot    │ Evidence, POC, Customs   │ • Live Customs & VIN Pilot       │
+│ (Months 1–3)             │ Dossier Orchestration    │ • 1st spreadsheet eliminated     │
+├──────────────────────────┼──────────────────────────┼──────────────────────────────────┤
+│ Q2: Commercial Modernize │ Vehicle Inventory, Sales │ • Real-time VIN tracking         │
+│ (Months 4–6)             │ Allocation, Dealerships  │ • Tadark ACL Read Adapter live   │
+├──────────────────────────┼──────────────────────────┼──────────────────────────────────┤
+│ Q3: Parts & Compliance   │ Spare Parts Catalog,     │ • Dealership parts order portal  │
+│ (Months 7–9)             │ Samaneh Moadian, Returns │ • Automated tax invoice bridge   │
+├──────────────────────────┼──────────────────────────┼──────────────────────────────────┤
+│ Q4: Stabilization & SRE  │ Performance tuning, DR   │ • Disaster Recovery drill passed │
+│ (Months 10–12)           │ failover, Year 1 Audit   │ • Formal Tadark review report    │
+└──────────────────────────┴──────────────────────────┴──────────────────────────────────┘
+```
+
+---
+
+## 6. Comprehensive 5x5 Transformation Risk Matrix
+
+Every enterprise transformation encounters friction. Arian Khodro manages risk proactively through monitored pre-emptive mitigations:
+
+| Risk Description | Category | Impact (1-5) | Likelihood (1-5) | Pre-Emptive Mitigation & Contingency Plan |
+| :--- | :--- | :---: | :---: | :--- |
+| **Middle-Management / Clerk Resistance** | People | 4 | 4 | Involve logistics clerks in UI wireframing; measure productivity instead of policing; frame tool as eliminating painful repetitive typing. |
+| **Tadark DB Lockups During Integration** | Technical | 5 | 3 | Never query production Tadark directly. Maintain asynchronous SQL Server read-only replica with isolated read users. |
+| **National Customs / Tax API Downtime** | External | 4 | 4 | Design asynchronous store-and-forward queue (Database Outbox pattern). If Samaneh Moadian is down, queue requests safely without blocking users. |
+| **Key Software Engineer Departure** | Team | 4 | 3 | Use mainstream industry standards (TypeScript, Node.js, PostgreSQL). No esoteric frameworks; mandatory automated tests and documentation. |
+| **Sudden Regulatory Import Shifts** | Business | 4 | 4 | Decouple customs calculation rules into database configuration tables rather than hardcoding in software logic. |
+
+---
+
+## 7. Governance Decision Gates Across the Roadmap
 
 Every milestone represents a formal checkpoint where executive leadership reviews verified deliverables before releasing capital for subsequent phases:
 

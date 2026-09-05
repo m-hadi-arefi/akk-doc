@@ -39,6 +39,7 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: 'Home', link: '/en/' },
+          { text: 'CEO Memo', link: '/en/business-case/ceo-memo' },
           { text: 'Business Case', link: '/en/business-case/' },
           { text: 'Roadmap', link: '/en/roadmap/' },
           { text: 'AI Roadmap', link: '/en/ai-roadmap/' },
@@ -47,10 +48,11 @@ export default defineConfig({
         sidebar: {
           '/en/business-case/': [
             {
-              text: 'Executive Business Case',
+              text: 'Executive Business Case & Memo',
               collapsed: false,
               items: [
-                { text: 'Executive Business Case', link: '/en/business-case/' },
+                { text: 'Executive Decision Memo (CEO)', link: '/en/business-case/ceo-memo' },
+                { text: 'Comprehensive Business Case', link: '/en/business-case/' },
                 { text: 'Step 1: Discovery Guidelines', link: '/en/roadmap/01-discovery' },
                 { text: 'Step 2: Decision Cycle', link: '/en/roadmap/02-decision-cycle' }
               ]
@@ -62,6 +64,7 @@ export default defineConfig({
               collapsed: false,
               items: [
                 { text: 'Roadmap Overview', link: '/en/roadmap/' },
+                { text: 'Executive Decision Memo (CEO)', link: '/en/business-case/ceo-memo' },
                 { text: 'Executive Business Case', link: '/en/business-case/' },
                 { text: 'Step 1: Discovery & Requirements (BABOK/TOGAF/PRD)', link: '/en/roadmap/01-discovery' },
                 { text: 'Step 2: Decision Cycle (Build vs Buy vs Outsource)', link: '/en/roadmap/02-decision-cycle' },
@@ -89,6 +92,7 @@ export default defineConfig({
               collapsed: false,
               items: [
                 { text: 'Standards Overview', link: '/en/knowledge/' },
+                { text: 'Architecture Audit & Red-Team Review', link: '/en/knowledge/audit-and-red-team' },
                 { text: 'Architecture Frameworks (TOGAF, BABOK, BPMN, ISO 42010)', link: '/en/knowledge/frameworks' },
                 { text: 'Architecture Patterns & C4 Model', link: '/en/knowledge/patterns' },
                 { text: 'Project Delivery Methodologies (Scrum, Kanban, RUP)', link: '/en/knowledge/project-methodologies' },
@@ -128,6 +132,7 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: 'صفحه اصلی', link: '/fa/' },
+          { text: 'یادداشت مدیرعامل', link: '/fa/business-case/ceo-memo' },
           { text: 'توجیه کسب‌وکار', link: '/fa/business-case/' },
           { text: 'رودمپ', link: '/fa/roadmap/' },
           { text: 'رودمپ هوش مصنوعی', link: '/fa/ai-roadmap/' },
@@ -136,10 +141,11 @@ export default defineConfig({
         sidebar: {
           '/fa/business-case/': [
             {
-              text: 'توجیه کسب‌وکار مدیریتی',
+              text: 'توجیه کسب‌وکار مدیریتی و یادداشت مدیرعامل',
               collapsed: false,
               items: [
-                { text: 'طرح توجیهی کسب‌وکار (Business Case)', link: '/fa/business-case/' },
+                { text: 'یادداشت تصمیم‌گیری مدیرعامل (CEO Memo)', link: '/fa/business-case/ceo-memo' },
+                { text: 'طرح توجیهی جامع کسب‌وکار (Business Case)', link: '/fa/business-case/' },
                 { text: 'قدم ۱: راهنمای فاز شناخت و ارزیابی', link: '/fa/roadmap/01-discovery' },
                 { text: 'قدم ۲: چرخه تصمیم‌گیری', link: '/fa/roadmap/02-decision-cycle' }
               ]
@@ -151,6 +157,7 @@ export default defineConfig({
               collapsed: false,
               items: [
                 { text: 'نمای کلی رودمپ', link: '/fa/roadmap/' },
+                { text: 'یادداشت تصمیم‌گیری مدیرعامل (CEO Memo)', link: '/fa/business-case/ceo-memo' },
                 { text: 'طرح توجیهی کسب‌وکار (Business Case)', link: '/fa/business-case/' },
                 { text: 'قدم ۱: بررسی، استخراج نیازها و تحلیل معماری', link: '/fa/roadmap/01-discovery' },
                 { text: 'قدم ۲: پیاده‌سازی چرخه تصمیم (بسازیم، بخریم، برونسپاری)', link: '/fa/roadmap/02-decision-cycle' },
@@ -178,6 +185,7 @@ export default defineConfig({
               collapsed: false,
               items: [
                 { text: 'نمای کلی استانداردها', link: '/fa/knowledge/' },
+                { text: 'بازبینی معماری و نقد ردتیم (Red-Team)', link: '/fa/knowledge/audit-and-red-team' },
                 { text: 'چارچوب‌های معماری (TOGAF, BABOK, BPMN, ISO 42010)', link: '/fa/knowledge/frameworks' },
                 { text: 'الگوهای معماری نرم‌افزار و C4 Model', link: '/fa/knowledge/patterns' },
                 { text: 'متدولوژی‌های مدیریت پروژه (Scrum, Kanban, RUP)', link: '/fa/knowledge/project-methodologies' },

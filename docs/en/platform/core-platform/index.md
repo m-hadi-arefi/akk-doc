@@ -27,53 +27,100 @@ A Core Platform resolves this friction by providing a **single, reusable layer o
 
 ---
 
-## 2. Multi-Tier Architectural Boundaries: What Belongs Where
+## 2. Pragmatic Architecture: Modular Monolith + Integration Layer
 
-To prevent the Core Platform from mutating into an unmaintainable monolith, the enterprise enforces strict tier separation:
+Following our Architecture Audit and ADR Reset, we strictly rejected microservices and heavy distributed middleware for Phase 1. The Core Platform and business capabilities are structured as a **Modular Monolith + Integration Layer**:
 
 ```text
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│ 1. BUSINESS APPLICATIONS TIER                                                          │
-│ [Vehicle Sales & Pricing]  [Customs Clearance]  [Spare Parts Warehouse]                │
-│ [Dealership Workshop CRM]  [Delivery Logistics] [Customer Portal] [Executive Analytics]│
+│                        ARIAN KHODRO MODULAR ARCHITECTURE (PHASE 1)                     │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│  Nginx Reverse Proxy & TLS Termination (Rate Limiting, mTLS, Zero Cost)                │
 └───────────────────────────────────────────┬────────────────────────────────────────────┘
-                                            │ Standard REST / JSON APIs & JWT Tokens
+                                            │ Unified HTTP/REST + JWT Security Context
                                             ▼
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│ 2. CORE PLATFORM TIER (Shared Foundation & Governance)                                 │
-│  ┌───────────────────────┐  ┌───────────────────────┐  ┌────────────────────────────┐  │
-│  │ Central Identity &    │  │ API Gateway &         │  │ Master Data Management     │  │
-│  │ Access (SSO, RBAC)    │  │ Traffic Management    │  │ (MDM: VIN, Customer, Parts)│  │
-│  └───────────────────────┘  └───────────────────────┘  └────────────────────────────┘  │
-│  ┌───────────────────────┐  ┌───────────────────────┐  ┌────────────────────────────┐  │
-│  │ Asynchronous Event    │  │ Centralized Immutable │  │ Unified Telemetry &        │  │
-│  │ Bus (Kafka/RabbitMQ)  │  │ Audit Logging         │  │ Distributed Tracing APM    │  │
-│  └───────────────────────┘  └───────────────────────┘  └────────────────────────────┘  │
+│ MODULAR MONOLITH APPLICATION (Single Deployable Binary / Container)                    │
+│                                                                                        │
+│  ┌─────────────────────────┐  ┌─────────────────────────┐  ┌─────────────────────────┐ │
+│  │ Customs & Dossier       │  │ Vehicle Inventory &     │  │ Spare Parts Catalog &   │ │
+│  │ Management Module       │  │ VIN Lifecycle Module    │  │ Order Dispatch Module   │ │
+│  └─────────────────────────┘  └─────────────────────────┘  └─────────────────────────┘ │
+│  ┌─────────────────────────┐  ┌─────────────────────────┐  ┌─────────────────────────┐ │
+│  │ Dealership Commercial & │  │ Identity & RBAC Bridge  │  │ Transactional Database  │ │
+│  │ Vehicle Handover Module │  │ (Keycloak / LDAP)       │  │ Outbox & Worker Queue   │ │
+│  └─────────────────────────┘  └─────────────────────────┘  └─────────────────────────┘ │
+│                                                                                        │
+│  Domain-Owned Schemas & Shared Transactional PostgreSQL Database                       │
 └───────────────────────────────────────────┬────────────────────────────────────────────┘
-                                            │ Standard Internal Contracts & Events
+                                            │ Bounded Context Interfaces / DB Outbox
                                             ▼
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│ 3. INTEGRATION LAYER & ANTI-CORRUPTION LAYER (Adapters & Connectors)                   │
-│  ┌───────────────────────┐  ┌───────────────────────┐  ┌────────────────────────────┐  │
-│  │ Tadark Legacy Adapter │  │ Banking & Payment     │  │ Government Customs & Tax   │  │
-│  │ (Anti-Corruption ACL) │  │ Gateway Connectors    │  │ Regulatory Compliance APIs │  │
-│  └───────────────────────┘  └───────────────────────┘  └────────────────────────────┘  │
-│  ┌───────────────────────┐  ┌───────────────────────┐  ┌────────────────────────────┐  │
-│  │ CRM Data Connector    │  │ Dealership Network    │  │ Foreign Supplier EDI /     │  │
-│  │ & Bi-directional Sync │  │ Integration Gateway   │  │ Electronic PO Exchange     │  │
-│  └───────────────────────┘  └───────────────────────┘  └────────────────────────────┘  │
+│ INTEGRATION & ANTI-CORRUPTION LAYER (ACL)                                              │
+│                                                                                        │
+│  ┌──────────────────────────────────────────────────┐  ┌─────────────────────────────┐ │
+│  │ Tadark Legacy Adapter (Read-Only Replica Reader  │  │ Tax Compliance Adapter       │ │
+│  │ + Audited Financial Journal Posting Procedures)  │  │ (Samaneh Moadian API Bridge) │ │
+│  └──────────────────────────────────────────────────┘  └─────────────────────────────┘ │
+│  ┌──────────────────────────────────────────────────┐  ┌─────────────────────────────┐ │
+│  │ Customs EDI & Scanned PDF OCR Pipeline Adapter   │  │ Bank Payment & Currency Sync │ │
+│  │ (Side-by-side Human-in-the-Loop Extraction)      │  │ (NIMA Exchange Rates Adapter)│ │
+│  └──────────────────────────────────────────────────┘  └─────────────────────────────┘ │
 └───────────────────────────────────────────┬────────────────────────────────────────────┘
-                                            │ Dedicated Drivers & Protocol Adapters
+                                            │ Read-Only SQL Queries / Legacy Delphi GUI
                                             ▼
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
-│ 4. FOUNDATIONAL & LEGACY BUSINESS SYSTEMS TIER                                         │
-│ [Legacy Tadark Delphi Core] [Enterprise Relational DBs] [External Government Systems]  │
+│ FOUNDATIONAL & LEGACY LEDGER SYSTEMS                                                   │
+│ [Tadark Accounting Delphi Core] [Historical General Ledger] [Air-Gapped Bank Terminals]│
 └────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 3. Clear Responsibility Matrix: What Belongs in Each Layer
+## 3. Business Capability Map (Strategic Sourcing Taxonomy)
+
+Every capability is categorized into one of three architectural tiers to determine its sourcing model:
+
+| Capability Tier | Scope & Business Function | Strategic Role | Governed Architecture Decision |
+| :--- | :--- | :--- | :--- |
+| **Core Differentiating** | Customs clearance dossier orchestration, VIN landed-cost calculation, dealer allocation rules. | Unique commercial advantage in Iranian automotive import market. | **BUILD IN-HOUSE** (Modular Monolith domains). Full IP ownership. |
+| **Supporting** | Customer CRM lead capture, parts warehouse binning, dealership warranty intake forms. | Operational efficiency; standard workflows. | **BUY OR INTEGRATE** (Lightweight COTS or specialized web modules). |
+| **Commodity** | General ledger accounting, payroll, employee single sign-on, server virtualization. | Standard non-differentiating overhead. | **WRAP & REUSE** (Retain Tadark for GL; connect Active Directory/Keycloak for SSO). |
+
+---
+
+## 4. Current State Reality Map (The As-Is Baseline)
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                               CURRENT STATE REALITY MAP                                │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                        │
+│   Commercial / Import Team                Logistics & Customs Team                     │
+│   ┌──────────────────────────────┐        ┌──────────────────────────────┐             │
+│   │ • 5 Master Excel Sheets      │        │ • Paper Bills of Lading (BOL)│             │
+│   │ • Manual Proforma calculations│       │ • Manual clearance folders   │             │
+│   │ • Phone calls for exchange rates      │ • Port demurrage tracking xls│             │
+│   └──────────────┬───────────────┘        └──────────────┬───────────────┘             │
+│                  │                                       │                             │
+│                  ▼                                       ▼                             │
+│     ┌─────────────────────────────────────────────────────────┐                        │
+│     │ BOTTLENECK: Delayed VIN Handover & Landed Cost Disputes │                        │
+│     └────────────────────────────┬────────────────────────────┘                        │
+│                                  │ Manual paper vouchers & re-keying                   │
+│                                  ▼                                                     │
+│   Accounting & Finance               Dealership Network                                │
+│   ┌──────────────────────────────┐   ┌──────────────────────────────┐                  │
+│   │ • Legacy Tadark (Delphi/SQL) │   │ • Dealership orders via Fax  │                  │
+│   │ • No external APIs or web UI │   │ • WhatsApp parts inquiries   │                  │
+│   │ • Closed binary stored procs │   │ • Paper warranty claims      │                  │
+│   └──────────────────────────────┘   └──────────────────────────────┘                  │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 5. Clear Responsibility Matrix: What Belongs in Each Layer
 
 | Architecture Layer | What Belongs Here | What Is Strictly Forbidden Here |
 | :--- | :--- | :--- |
