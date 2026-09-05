@@ -4,7 +4,7 @@ import postcssRtlcss from 'postcss-rtlcss'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'Arian Khodro',
-  description: 'Software Engineering, Architecture & Digital Transformation Knowledge System',
+  description: 'Enterprise Transformation Blueprint, Digital Core Platform & Pragmatic AI Strategy',
   srcDir: 'docs',
   cleanUrls: true,
   vite: {
@@ -29,86 +29,331 @@ export default defineConfig({
     ':folder/:sub/:nested/README.md': ':folder/:sub/:nested/index.md'
   },
   locales: {
+    fa: {
+      label: 'فارسی',
+      lang: 'fa',
+      dir: 'rtl',
+      link: '/fa/',
+      title: 'آرین خودرو',
+      description: 'سامانه جامع مستندات سازمانی، معماری سکوی مرکزی و نقشه راه تحول',
+      themeConfig: {
+        nav: [
+          { text: 'صفحه اصلی', link: '/fa/' },
+          { text: '📁 داکیومنت‌های اولیه', link: '/fa/initial-review/' },
+          { text: '📂 داکیومنت‌های وضعیت فعلی', link: '/fa/current-state/' }
+        ],
+        sidebar: {
+          '/fa/current-state/': [
+            {
+              text: '📂 مخزن داکیومنت‌های وضعیت فعلی',
+              items: [
+                { text: 'نمای کلی مستندات وضعیت فعلی', link: '/fa/current-state/' },
+                { text: 'راهنمای افزودن مستند جدید و قالب خام', link: '/fa/current-state/guide' }
+              ]
+            },
+            {
+              text: 'دسته‌بندی‌ها (آماده ثبت مستند)',
+              items: [
+                { text: 'فرآیندهای عملیاتی جاری (آماده بارگذاری)', link: '/fa/current-state/' },
+                { text: 'شناسنامه سیستم‌ها و نرم‌افزارها', link: '/fa/current-state/' },
+                { text: 'رجیستری اکسل‌ها و پایگاه داده‌ها', link: '/fa/current-state/' }
+              ]
+            },
+            {
+              text: 'سایر بخش‌ها',
+              items: [
+                { text: '📁 ورود به داکیومنت‌های اولیه', link: '/fa/initial-review/' },
+                { text: '🏠 بازگشت به صفحه اصلی', link: '/fa/' }
+              ]
+            }
+          ],
+          '/fa/initial-review/': [
+            {
+              text: '📁 داکیومنت‌های بررسی اولیه',
+              items: [
+                { text: 'فهرست کامل داکیومنت‌های اولیه', link: '/fa/initial-review/' }
+              ]
+            },
+            {
+              text: '۰۰. سند راهبردی مدیران ارشد',
+              collapsed: false,
+              items: [
+                { text: 'خلاصه مدیریتی بخش', link: '/fa/initial-review/00-executive/' },
+                { text: 'چشم‌انداز و ستاره قطبی تحول', link: '/fa/initial-review/00-executive/vision' },
+                { text: 'تز بنیادین و داستان تحول', link: '/fa/initial-review/00-executive/transformation-thesis' },
+                { text: 'یادداشت تصمیم‌گیری مدیرعامل', link: '/fa/initial-review/00-executive/ceo-memo' },
+                { text: 'منشور اختیارات رهبر تحول', link: '/fa/initial-review/00-executive/transformation-charter' },
+                { text: 'سنجه‌های کلان موفقیت', link: '/fa/initial-review/00-executive/success-metrics' }
+              ]
+            },
+            {
+              text: '۰۱. شناخت میدانی و واقعیت‌ها',
+              collapsed: false,
+              items: [
+                { text: 'نمای کلی فاز شناخت', link: '/fa/initial-review/01-discovery/' },
+                { text: 'چارچوب شناخت میدانی (۳۰ تا ۶۰ روز)', link: '/fa/initial-review/01-discovery/discovery-framework' },
+                { text: 'جریان‌های فرآیندی کسب‌وکار', link: '/fa/initial-review/01-discovery/business-processes' },
+                { text: 'معماری فنی سیستم‌های فعلی (تدارک)', link: '/fa/initial-review/01-discovery/technology-landscape' },
+                { text: 'چشم‌انداز داده‌ها و جزایر اطلاعاتی', link: '/fa/initial-review/01-discovery/data-landscape' },
+                { text: 'ساختار سازمانی و سرمایه انسانی', link: '/fa/initial-review/01-discovery/organization-and-capabilities' },
+                { text: 'رجیستری نقاط درد و فرضیات', link: '/fa/initial-review/01-discovery/pain-points-and-hypotheses' }
+              ]
+            },
+            {
+              text: '۰۲. استراتژی جامع تحول',
+              collapsed: false,
+              items: [
+                { text: 'نمای کلی استراتژی تحول', link: '/fa/initial-review/02-transformation-strategy/' },
+                { text: 'ارکان سه‌گانه تحول سازمانی', link: '/fa/initial-review/02-transformation-strategy/transformation-pillars' },
+                { text: 'چارچوب ساخت، خرید یا یکپارچه‌سازی', link: '/fa/initial-review/02-transformation-strategy/build-buy-integrate' },
+                { text: 'مدل عملیاتی هدف (TOM)', link: '/fa/initial-review/02-transformation-strategy/operating-model' },
+                { text: 'معماری وضعیت هدف سازمان', link: '/fa/initial-review/02-transformation-strategy/target-state' },
+                { text: 'نقشه راه مرحله‌بندی‌شده تحول', link: '/fa/initial-review/02-transformation-strategy/transformation-roadmap' }
+              ]
+            },
+            {
+              text: '۰۳. معماری نرم‌افزار و داده',
+              collapsed: false,
+              items: [
+                { text: 'نمای کلی معماری دیجیتال', link: '/fa/initial-review/03-digital-and-software/' },
+                { text: 'استراتژی مهندسی نرم‌افزار', link: '/fa/initial-review/03-digital-and-software/software-strategy' },
+                { text: 'معماری مونولیت ماژولار', link: '/fa/initial-review/03-digital-and-software/modular-monolith' },
+                { text: 'همزیستی با تدارک و لایه ضدفساد', link: '/fa/initial-review/03-digital-and-software/coexistence-and-acl' },
+                { text: 'معماری داده و هاب رکورد طلایی شاسی', link: '/fa/initial-review/03-digital-and-software/data-architecture' },
+                { text: 'معماری APIها و شاهراه گذرگاهی', link: '/fa/initial-review/03-digital-and-software/api-and-integration' },
+                { text: 'ساماندهی فناوری سایه و اکسل‌ها', link: '/fa/initial-review/03-digital-and-software/shadow-it-migration' }
+              ]
+            },
+            {
+              text: '۰۴. تحول عمل‌گرایانه هوش مصنوعی',
+              collapsed: false,
+              items: [
+                { text: 'نمای کلی تحول هوش مصنوعی', link: '/fa/initial-review/04-ai-transformation/' },
+                { text: 'استراتژی عمل‌گرایانه AI', link: '/fa/initial-review/04-ai-transformation/ai-strategy' },
+                { text: 'چارچوب ارزیابی موارد کاربرد AI', link: '/fa/initial-review/04-ai-transformation/usecase-evaluation' },
+                { text: 'پردازش هوشمند اسناد و OCR', link: '/fa/initial-review/04-ai-transformation/ocr-and-document-ai' },
+                { text: 'حاکمیت، اخلاق و پایش انحراف مدل', link: '/fa/initial-review/04-ai-transformation/ai-governance' },
+                { text: 'هوش مصنوعی در چرخه مهندسی', link: '/fa/initial-review/04-ai-transformation/ai-assisted-engineering' }
+              ]
+            },
+            {
+              text: '۰۵. اجرا، تحویل چابک و تغییر',
+              collapsed: false,
+              items: [
+                { text: 'نمای کلی اجرا و تحویل', link: '/fa/initial-review/05-execution/' },
+                { text: 'تحویل چابک و ریتم اسپرینت‌ها', link: '/fa/initial-review/05-execution/sprint-rhythm' },
+                { text: 'پایلوت‌های تاکتیکی و دستاوردهای سریع', link: '/fa/initial-review/05-execution/pilots-and-quickwins' },
+                { text: 'مدیریت تغییر سازمانی با مدل ADKAR', link: '/fa/initial-review/05-execution/change-management' },
+                { text: 'مدیریت و مهار ریسک‌های سازمان', link: '/fa/initial-review/05-execution/risk-management' }
+              ]
+            },
+            {
+              text: '۰۶. حاکمیت سازمانی و سنجه‌های مالی',
+              collapsed: false,
+              items: [
+                { text: 'نمای کلی حاکمیت و سنجش', link: '/fa/initial-review/06-governance/' },
+                { text: 'چارچوب حاکمیت و کمیته راهبری', link: '/fa/initial-review/06-governance/governance-framework' },
+                { text: 'حاکمیت معماری و فرآیند ADR', link: '/fa/initial-review/06-governance/architecture-governance' },
+                { text: 'سنجه‌های کلیدی عملکرد و داشبوردها', link: '/fa/initial-review/06-governance/success-metrics-and-kpis' },
+                { text: 'حاکمیت مالی و سنجش نرخ بازگشت (ROI)', link: '/fa/initial-review/06-governance/financial-governance' }
+              ]
+            },
+            {
+              text: '۰۷. پیوست‌ها، سوابق و مراجع',
+              collapsed: false,
+              items: [
+                { text: 'نمای کلی پیوست‌ها', link: '/fa/initial-review/07-appendix/' },
+                { text: 'واژه‌نامه تخصصی دوزبانه', link: '/fa/initial-review/07-appendix/glossary' },
+                { text: 'فهرست سوابق تصمیمات معماری (ADRs)', link: '/fa/initial-review/07-appendix/adrs/' },
+                { text: 'سند ADR-001: مونولیت ماژولار', link: '/fa/initial-review/07-appendix/adrs/adr-001-modular-monolith' },
+                { text: 'سند ADR-002: لایه ضدفساد تدارک', link: '/fa/initial-review/07-appendix/adrs/adr-002-anti-corruption-layer' },
+                { text: 'سند ADR-003: پایگاه داده PostgreSQL', link: '/fa/initial-review/07-appendix/adrs/adr-003-postgresql-primary-database' },
+                { text: 'سند ADR-004: هاب رکورد طلایی شاسی', link: '/fa/initial-review/07-appendix/adrs/adr-004-vin-golden-record' },
+                { text: 'سند ADR-005: خط لوله ترکیبی OCR', link: '/fa/initial-review/07-appendix/adrs/adr-005-document-ocr-pipeline' },
+                { text: 'سند ADR-006: تیم مهندسی داخلی', link: '/fa/initial-review/07-appendix/adrs/adr-006-inhouse-engineering' },
+                { text: 'استانداردها و مراجع قانونی', link: '/fa/initial-review/07-appendix/references' }
+              ]
+            }
+          ],
+          '/fa/': [
+            {
+              text: 'پایگاه مستندات سازمانی آرین خودرو',
+              items: [
+                { text: '📁 داکیومنت‌های اولیه (بررسی اولیه)', link: '/fa/initial-review/' },
+                { text: '📂 داکیومنت‌های وضعیت فعلی', link: '/fa/current-state/' },
+                { text: '📝 راهنمای افزودن مستند جدید', link: '/fa/current-state/guide' }
+              ]
+            }
+          ]
+        },
+        docFooter: {
+          prev: 'صفحه قبل',
+          next: 'صفحه بعد'
+        },
+        outline: {
+          label: 'در این صفحه'
+        },
+        darkModeSwitchLabel: 'حالت تاریک',
+        lightModeSwitchTitle: 'تغییر به حالت روشن',
+        darkModeSwitchTitle: 'تغییر به حالت تاریک',
+        sidebarMenuLabel: 'فهرست منو',
+        returnToTopLabel: 'بازگشت به بالای صفحه',
+        langMenuLabel: 'تغییر زبان'
+      }
+    },
     en: {
       label: 'English',
       lang: 'en',
       dir: 'ltr',
       link: '/en/',
       title: 'Arian Khodro',
-      description: 'Enterprise Architectural Assessment, Transformation Roadmap & Standards',
+      description: 'Enterprise Transformation Blueprint, Architecture & Operational Strategy',
       themeConfig: {
         nav: [
           { text: 'Home', link: '/en/' },
-          { text: 'CEO Memo', link: '/en/business-case/ceo-memo' },
-          { text: 'Business Case', link: '/en/business-case/' },
-          { text: 'Roadmap', link: '/en/roadmap/' },
-          { text: 'AI Roadmap', link: '/en/ai-roadmap/' },
-          { text: 'Standards', link: '/en/knowledge/' }
+          { text: '📁 Initial Documents', link: '/en/initial-review/' },
+          { text: '📂 Current State', link: '/en/current-state/' }
         ],
         sidebar: {
-          '/en/business-case/': [
+          '/en/current-state/': [
             {
-              text: 'Executive Business Case & Memo',
-              collapsed: false,
+              text: '📂 Current State Intake Repository',
               items: [
-                { text: 'Executive Decision Memo (CEO)', link: '/en/business-case/ceo-memo' },
-                { text: 'Comprehensive Business Case', link: '/en/business-case/' },
-                { text: 'Step 1: Discovery Guidelines', link: '/en/roadmap/01-discovery' },
-                { text: 'Step 2: Decision Cycle', link: '/en/roadmap/02-decision-cycle' }
+                { text: 'Current State Overview', link: '/en/current-state/' },
+                { text: 'Authoring Guide & Template', link: '/en/current-state/guide' }
+              ]
+            },
+            {
+              text: 'Intake Categories (Ready)',
+              items: [
+                { text: 'Operational Processes & SOPs', link: '/en/current-state/' },
+                { text: 'In-use Applications Catalog', link: '/en/current-state/' },
+                { text: 'Spreadsheet & Data Registry', link: '/en/current-state/' }
+              ]
+            },
+            {
+              text: 'Other Sections',
+              items: [
+                { text: '📁 Initial Review Documents', link: '/en/initial-review/' },
+                { text: '🏠 Back to Home', link: '/en/' }
               ]
             }
           ],
-          '/en/roadmap/': [
+          '/en/initial-review/': [
             {
-              text: 'Transformation Roadmap (5 Steps)',
+              text: '📁 Initial Review Documents',
+              items: [
+                { text: 'Complete Documents Index', link: '/en/initial-review/' }
+              ]
+            },
+            {
+              text: '00. Executive Blueprint',
               collapsed: false,
               items: [
-                { text: 'Roadmap Overview', link: '/en/roadmap/' },
-                { text: 'Executive Decision Memo (CEO)', link: '/en/business-case/ceo-memo' },
-                { text: 'Executive Business Case', link: '/en/business-case/' },
-                { text: 'Step 1: Discovery & Requirements (BABOK/TOGAF/PRD)', link: '/en/roadmap/01-discovery' },
-                { text: 'Step 2: Decision Cycle (Build vs Buy vs Outsource)', link: '/en/roadmap/02-decision-cycle' },
-                { text: 'Step 3: Development & Initial Core Platform', link: '/en/roadmap/03-development-and-core-platform' },
-                { text: 'Step 4: In-House SDLC & Engineering Team', link: '/en/roadmap/04-internal-development-lifecycle' },
-                { text: 'Step 5: Production Launch & Operations', link: '/en/roadmap/05-launch-and-operations' }
+                { text: 'Executive Overview', link: '/en/initial-review/00-executive/' },
+                { text: 'Vision & North Star', link: '/en/initial-review/00-executive/vision' },
+                { text: 'Transformation Thesis', link: '/en/initial-review/00-executive/transformation-thesis' },
+                { text: 'CEO Decision Memo', link: '/en/initial-review/00-executive/ceo-memo' },
+                { text: 'Transformation Charter & Mandate', link: '/en/initial-review/00-executive/transformation-charter' },
+                { text: 'Executive Success Metrics', link: '/en/initial-review/00-executive/success-metrics' }
+              ]
+            },
+            {
+              text: '01. Ground-Truth Discovery',
+              collapsed: false,
+              items: [
+                { text: 'Discovery Overview', link: '/en/initial-review/01-discovery/' },
+                { text: 'Discovery Framework', link: '/en/initial-review/01-discovery/discovery-framework' },
+                { text: 'Business Processes Landscape', link: '/en/initial-review/01-discovery/business-processes' },
+                { text: 'Technology Landscape (Tadark)', link: '/en/initial-review/01-discovery/technology-landscape' },
+                { text: 'Data Landscape & Silos', link: '/en/initial-review/01-discovery/data-landscape' },
+                { text: 'Organization & Capabilities', link: '/en/initial-review/01-discovery/organization-and-capabilities' },
+                { text: 'Pain Points & Hypotheses', link: '/en/initial-review/01-discovery/pain-points-and-hypotheses' }
+              ]
+            },
+            {
+              text: '02. Transformation Strategy',
+              collapsed: false,
+              items: [
+                { text: 'Strategy Overview', link: '/en/initial-review/02-transformation-strategy/' },
+                { text: 'Three Transformation Pillars', link: '/en/initial-review/02-transformation-strategy/transformation-pillars' },
+                { text: 'Build vs. Buy vs. Integrate', link: '/en/initial-review/02-transformation-strategy/build-buy-integrate' },
+                { text: 'Target Operating Model', link: '/en/initial-review/02-transformation-strategy/operating-model' },
+                { text: 'Target State Architecture', link: '/en/initial-review/02-transformation-strategy/target-state' },
+                { text: 'Phased Transformation Roadmap', link: '/en/initial-review/02-transformation-strategy/transformation-roadmap' }
+              ]
+            },
+            {
+              text: '03. Digital & Software Architecture',
+              collapsed: false,
+              items: [
+                { text: 'Architecture Overview', link: '/en/initial-review/03-digital-and-software/' },
+                { text: 'Core Software Strategy', link: '/en/initial-review/03-digital-and-software/software-strategy' },
+                { text: 'Modular Monolith Architecture', link: '/en/initial-review/03-digital-and-software/modular-monolith' },
+                { text: 'Legacy Coexistence & ACL', link: '/en/initial-review/03-digital-and-software/coexistence-and-acl' },
+                { text: 'Target Data Architecture & VIN Hub', link: '/en/initial-review/03-digital-and-software/data-architecture' },
+                { text: 'API & Integration Architecture', link: '/en/initial-review/03-digital-and-software/api-and-integration' },
+                { text: 'Shadow IT & Spreadsheet Migration', link: '/en/initial-review/03-digital-and-software/shadow-it-migration' }
+              ]
+            },
+            {
+              text: '04. Pragmatic AI Transformation',
+              collapsed: false,
+              items: [
+                { text: 'AI Strategy Overview', link: '/en/initial-review/04-ai-transformation/' },
+                { text: 'Pragmatic AI Strategy', link: '/en/initial-review/04-ai-transformation/ai-strategy' },
+                { text: 'AI Use Case Evaluation', link: '/en/initial-review/04-ai-transformation/usecase-evaluation' },
+                { text: 'OCR & Document Intelligence', link: '/en/initial-review/04-ai-transformation/ocr-and-document-ai' },
+                { text: 'AI Governance, Ethics & Drift', link: '/en/initial-review/04-ai-transformation/ai-governance' },
+                { text: 'AI in Engineering Lifecycle', link: '/en/initial-review/04-ai-transformation/ai-assisted-engineering' }
+              ]
+            },
+            {
+              text: '05. Execution & Delivery',
+              collapsed: false,
+              items: [
+                { text: 'Execution Overview', link: '/en/initial-review/05-execution/' },
+                { text: 'Agile Delivery & Sprints', link: '/en/initial-review/05-execution/sprint-rhythm' },
+                { text: 'Tactical Pilots & Quick Wins', link: '/en/initial-review/05-execution/pilots-and-quickwins' },
+                { text: 'Change Management (ADKAR)', link: '/en/initial-review/05-execution/change-management' },
+                { text: 'Enterprise Risk Management', link: '/en/initial-review/05-execution/risk-management' }
+              ]
+            },
+            {
+              text: '06. Lean Governance & Financial ROI',
+              collapsed: false,
+              items: [
+                { text: 'Governance Overview', link: '/en/initial-review/06-governance/' },
+                { text: 'Governance Framework & Steering', link: '/en/initial-review/06-governance/governance-framework' },
+                { text: 'Architecture Governance & ADRs', link: '/en/initial-review/06-governance/architecture-governance' },
+                { text: 'Success Metrics & KPI Dashboard', link: '/en/initial-review/06-governance/success-metrics-and-kpis' },
+                { text: 'Financial Governance & ROI Tracking', link: '/en/initial-review/06-governance/financial-governance' }
+              ]
+            },
+            {
+              text: '07. Appendix & Standards',
+              collapsed: false,
+              items: [
+                { text: 'Appendix Overview', link: '/en/initial-review/07-appendix/' },
+                { text: 'Comprehensive Bilingual Glossary', link: '/en/initial-review/07-appendix/glossary' },
+                { text: 'Architecture Decisions (ADRs) Index', link: '/en/initial-review/07-appendix/adrs/' },
+                { text: 'ADR-001: Modular Monolith', link: '/en/initial-review/07-appendix/adrs/adr-001-modular-monolith' },
+                { text: 'ADR-002: Anti-Corruption Layer', link: '/en/initial-review/07-appendix/adrs/adr-002-anti-corruption-layer' },
+                { text: 'ADR-003: PostgreSQL Database', link: '/en/initial-review/07-appendix/adrs/adr-003-postgresql-primary-database' },
+                { text: 'ADR-004: VIN Golden Record Hub', link: '/en/initial-review/07-appendix/adrs/adr-004-vin-golden-record' },
+                { text: 'ADR-005: Hybrid OCR Pipeline', link: '/en/initial-review/07-appendix/adrs/adr-005-document-ocr-pipeline' },
+                { text: 'ADR-006: In-House Squad', link: '/en/initial-review/07-appendix/adrs/adr-006-inhouse-engineering' },
+                { text: 'Standards & References', link: '/en/initial-review/07-appendix/references' }
               ]
             }
           ],
-          '/en/ai-roadmap/': [
+          '/en/': [
             {
-              text: 'AI Strategic Roadmap (3 Steps)',
-              collapsed: false,
+              text: 'Arian Khodro Knowledge Portal',
               items: [
-                { text: 'AI Strategy Overview', link: '/en/ai-roadmap/' },
-                { text: 'Step 1: AI Training for Executives', link: '/en/ai-roadmap/01-management-training' },
-                { text: 'Step 2: Enterprise Assessment & AI Discovery', link: '/en/ai-roadmap/02-usecase-discovery' },
-                { text: 'Step 3: Operational Tool Rollout', link: '/en/ai-roadmap/03-department-rollout' }
-              ]
-            }
-          ],
-          '/en/knowledge/': [
-            {
-              text: 'Standards & Architecture Frameworks',
-              collapsed: false,
-              items: [
-                { text: 'Standards Overview', link: '/en/knowledge/' },
-                { text: 'Architecture Audit & Red-Team Review', link: '/en/knowledge/audit-and-red-team' },
-                { text: 'Architecture Frameworks (TOGAF, BABOK, BPMN, ISO 42010)', link: '/en/knowledge/frameworks' },
-                { text: 'Architecture Patterns & C4 Model', link: '/en/knowledge/patterns' },
-                { text: 'Project Delivery Methodologies (Scrum, Kanban, RUP)', link: '/en/knowledge/project-methodologies' },
-                { text: 'Architecture Decision Records (ADR)', link: '/en/knowledge/adr-templates' }
-              ]
-            }
-          ],
-          '/en/platform/core-platform/': [
-            {
-              text: 'Core Platform Architecture',
-              collapsed: false,
-              items: [
-                { text: 'Core Platform Concept (Step 3 Supporting Doc)', link: '/en/platform/core-platform/' },
-                { text: 'Identity & Access Control (SSO/RBAC)', link: '/en/platform/core-platform/identity-access' },
-                { text: 'API Gateway & Event Messaging', link: '/en/platform/core-platform/api-gateway' },
-                { text: 'Master Data Management (MDM)', link: '/en/platform/core-platform/master-data' }
+                { text: '📁 Initial Review Documents', link: '/en/initial-review/' },
+                { text: '📂 Current State Documents', link: '/en/current-state/' },
+                { text: '📝 New Document Guide', link: '/en/current-state/guide' }
               ]
             }
           ]
@@ -120,105 +365,6 @@ export default defineConfig({
         outline: {
           label: 'On this page'
         }
-      }
-    },
-    fa: {
-      label: 'فارسی',
-      lang: 'fa',
-      dir: 'rtl',
-      link: '/fa/',
-      title: 'بررسی وضعیت آرین خودرو',
-      description: 'ارزیابی جامع سازمانی، نقشه راه تحول و استانداردهای مهندسی',
-      themeConfig: {
-        nav: [
-          { text: 'صفحه اصلی', link: '/fa/' },
-          { text: 'یادداشت مدیرعامل', link: '/fa/business-case/ceo-memo' },
-          { text: 'توجیه کسب‌وکار', link: '/fa/business-case/' },
-          { text: 'رودمپ', link: '/fa/roadmap/' },
-          { text: 'رودمپ هوش مصنوعی', link: '/fa/ai-roadmap/' },
-          { text: 'استانداردها', link: '/fa/knowledge/' }
-        ],
-        sidebar: {
-          '/fa/business-case/': [
-            {
-              text: 'توجیه کسب‌وکار مدیریتی و یادداشت مدیرعامل',
-              collapsed: false,
-              items: [
-                { text: 'یادداشت تصمیم‌گیری مدیرعامل (CEO Memo)', link: '/fa/business-case/ceo-memo' },
-                { text: 'طرح توجیهی جامع کسب‌وکار (Business Case)', link: '/fa/business-case/' },
-                { text: 'قدم ۱: راهنمای فاز شناخت و ارزیابی', link: '/fa/roadmap/01-discovery' },
-                { text: 'قدم ۲: چرخه تصمیم‌گیری', link: '/fa/roadmap/02-decision-cycle' }
-              ]
-            }
-          ],
-          '/fa/roadmap/': [
-            {
-              text: 'رودمپ تحول سازمانی (۵ قدم)',
-              collapsed: false,
-              items: [
-                { text: 'نمای کلی رودمپ', link: '/fa/roadmap/' },
-                { text: 'یادداشت تصمیم‌گیری مدیرعامل (CEO Memo)', link: '/fa/business-case/ceo-memo' },
-                { text: 'طرح توجیهی کسب‌وکار (Business Case)', link: '/fa/business-case/' },
-                { text: 'قدم ۱: بررسی، استخراج نیازها و تحلیل معماری', link: '/fa/roadmap/01-discovery' },
-                { text: 'قدم ۲: پیاده‌سازی چرخه تصمیم (بسازیم، بخریم، برونسپاری)', link: '/fa/roadmap/02-decision-cycle' },
-                { text: 'قدم ۳: توسعه نتایج بررسی و کور پلتفرم', link: '/fa/roadmap/03-development-and-core-platform' },
-                { text: 'قدم ۴: راه‌اندازی چرخه کامل توسعه داخلی', link: '/fa/roadmap/04-internal-development-lifecycle' },
-                { text: 'قدم ۵: لانچ، استقرار نهایی و پایش پایدار', link: '/fa/roadmap/05-launch-and-operations' }
-              ]
-            }
-          ],
-          '/fa/ai-roadmap/': [
-            {
-              text: 'رودمپ هوش مصنوعی (۳ گام)',
-              collapsed: false,
-              items: [
-                { text: 'نمای کلی استراتژی هوش مصنوعی', link: '/fa/ai-roadmap/' },
-                { text: 'گام ۱: آموزش هوش مصنوعی برای مدیران', link: '/fa/ai-roadmap/01-management-training' },
-                { text: 'گام ۲: بررسی کل سیستم و کشف سولوشن‌های AI', link: '/fa/ai-roadmap/02-usecase-discovery' },
-                { text: 'گام ۳: راه‌اندازی و استقرار عملیاتی', link: '/fa/ai-roadmap/03-department-rollout' }
-              ]
-            }
-          ],
-          '/fa/knowledge/': [
-            {
-              text: 'استانداردها و چارچوب‌های مهندسی',
-              collapsed: false,
-              items: [
-                { text: 'نمای کلی استانداردها', link: '/fa/knowledge/' },
-                { text: 'بازبینی معماری و نقد ردتیم (Red-Team)', link: '/fa/knowledge/audit-and-red-team' },
-                { text: 'چارچوب‌های معماری (TOGAF, BABOK, BPMN, ISO 42010)', link: '/fa/knowledge/frameworks' },
-                { text: 'الگوهای معماری نرم‌افزار و C4 Model', link: '/fa/knowledge/patterns' },
-                { text: 'متدولوژی‌های مدیریت پروژه (Scrum, Kanban, RUP)', link: '/fa/knowledge/project-methodologies' },
-                { text: 'سوابق تصمیم‌گیری معماری (ADR)', link: '/fa/knowledge/adr-templates' }
-              ]
-            }
-          ],
-          '/fa/platform/core-platform/': [
-            {
-              text: 'معماری سکوی مرکزی (Core Platform)',
-              collapsed: false,
-              items: [
-                { text: 'مفهوم کور پلتفرم (پشتوانه فنی قدم ۳)', link: '/fa/platform/core-platform/' },
-                { text: 'احراز هویت و سطوح دسترسی (SSO / RBAC)', link: '/fa/platform/core-platform/identity-access' },
-                { text: 'مدیریت APIها و گذرگاه یکپارچگی', link: '/fa/platform/core-platform/api-gateway' },
-                { text: 'مدیریت داده‌های مرجع خودرو و مشتری (MDM)', link: '/fa/platform/core-platform/master-data' }
-              ]
-            }
-          ]
-        },
-        docFooter: {
-          prev: 'صفحه قبل',
-          next: 'صفحه بعد',
-        },
-        outline: {
-          label: 'در این صفحه'
-        },
-        darkModeSwitchLabel: 'حالت تاریک',
-        lightModeSwitchTitle: 'تغییر به حالت روشن',
-        darkModeSwitchTitle: 'تغییر به حالت تاریک',
-        sidebarMenuLabel: 'فهرست منو',
-        returnToTopLabel: 'بازگشت به بالای صفحه',
-        langMenuLabel: 'تغییر زبان'
       }
     }
   },

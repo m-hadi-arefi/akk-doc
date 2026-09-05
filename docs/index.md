@@ -1,56 +1,75 @@
 ---
-layout: page
-title: "Arian Khodro Knowledge System"
+layout: home
+title: "Arian Khodro | Enterprise Documentation"
+hero:
+  name: "Arian Khodro"
+  text: "Enterprise Documentation Portal"
+  tagline: "Centralized Technical Knowledge, Architecture & Transformation Platform"
+  actions:
+    - theme: brand
+      text: "📁 Initial Documents"
+      link: /en/initial-review/
+    - theme: alt
+      text: "📂 Current State"
+      link: /en/current-state/
+    - theme: alt
+      text: "مرور به فارسی 🇮🇷"
+      link: /fa/
+
+features:
+  - icon: 📚
+    title: "Initial Review Blueprints"
+    details: "8 foundational domains covering transformation strategy, discovery, modular monolith software architecture, AI, and lean governance."
+    link: /en/initial-review/
+  - icon: 📂
+    title: "Current State Repository"
+    details: "Living documentation intake space for operational manuals, active workflows, software catalogs, and spreadsheets."
+    link: /en/current-state/
+  - icon: 🇮🇷
+    title: "پرتال مستندات فارسی (Persian)"
+    details: "دسترسی کامل به تمامی مستندات معماری، شناخت میدانی، هوش مصنوعی و نقشه راه تحول به زبان فارسی."
+    link: /fa/
 ---
 
-<script setup>
-import { onMounted } from 'vue'
+## 🗂️ Enterprise Documentation Directory
 
-onMounted(() => {
-  if (typeof window !== 'undefined') {
-    const userLang = navigator.language || navigator.userLanguage || ''
-    if (userLang.toLowerCase().startsWith('fa')) {
-      window.location.replace('/fa/')
-    } else {
-      window.location.replace('/en/')
-    }
-  }
-})
-</script>
+::: tip 🇮🇷 دسترسی سریع به نسخه فارسی (Persian Edition)
+برای مطالعه تمامی مستندات، نقشه‌راه و سوابق معماری به زبان فارسی، می‌توانید روی دکمه **«مرور به فارسی 🇮🇷»** در بالا کلیک کنید یا به [پرتال مستندات فارسی](/fa/) مراجعه نمایید.
+:::
 
-<div style="max-width: 900px; margin: 60px auto; padding: 0 24px; text-align: center;">
-  <div style="font-size: 56px; margin-bottom: 20px;">🚗 🏛️</div>
-  <h1 style="font-size: 2.4rem; font-weight: 800; margin-bottom: 16px; color: var(--vp-c-text-1);">
-    Arian Khodro Knowledge System
-  </h1>
-  <p style="font-size: 1.2rem; color: var(--vp-c-text-2); margin-bottom: 40px;">
-    سامانه دانش مهندسی، معماری سازمانی و تحول دیجیتال آریان خودرو<br>
-    Enterprise Architecture • Digital Transformation • Engineering Standards
-  </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
 
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 40px; text-align: left;">
-    <div style="border: 1px solid var(--vp-c-divider); border-radius: 12px; padding: 24px; background: var(--vp-c-bg-soft);">
-      <h2 style="font-size: 1.3rem; margin-top: 0; color: var(--vp-c-brand-1);">🇬🇧 English Documentation</h2>
-      <p style="color: var(--vp-c-text-2); font-size: 0.95rem; min-height: 48px;">
-        Complete enterprise architecture, 1-year transformation roadmap, core platform shared capabilities, and operational AI strategy.
-      </p>
-      <a href="/en/" style="display: inline-block; margin-top: 16px; padding: 10px 20px; background: var(--vp-c-brand-1); color: white; border-radius: 8px; font-weight: 600; text-decoration: none;">
-        Enter English Portal →
-      </a>
-    </div>
-
-    <div style="border: 1px solid var(--vp-c-divider); border-radius: 12px; padding: 24px; background: var(--vp-c-bg-soft); direction: rtl; text-align: right;">
-      <h2 style="font-size: 1.3rem; margin-top: 0; color: var(--vp-c-brand-1);">🇮🇷 مستندات فارسی</h2>
-      <p style="color: var(--vp-c-text-2); font-size: 0.95rem; min-height: 48px;">
-        معماری جامع سازمانی، نقشه راه ۱ ساله تحول، سکوی مرکزی و استراتژی عملیاتی هوش مصنوعی آرین خودرو.
-      </p>
-      <a href="/fa/" style="display: inline-block; margin-top: 16px; padding: 10px 20px; background: var(--vp-c-brand-1); color: white; border-radius: 8px; font-weight: 600; text-decoration: none;">
-        ورود به پورتال فارسی ←
-      </a>
-    </div>
+<div class="p-5 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
+  <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400 mb-2">📁 Folder: Initial Review Documents (/initial-review/)</h3>
+  <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Complete strategic blueprints and architecture specifications formulated during the initial transformation review:</p>
+  <ul class="space-y-1 text-sm">
+    <li>🔹 <a href="/en/initial-review/00-executive/">00. Executive Blueprint & C-Suite Decisions</a></li>
+    <li>🔹 <a href="/en/initial-review/01-discovery/">01. Ground-Truth Discovery & Tadark Forensics</a></li>
+    <li>🔹 <a href="/en/initial-review/02-transformation-strategy/">02. Transformation Strategy & Target Operating Model</a></li>
+    <li>🔹 <a href="/en/initial-review/03-digital-and-software/">03. Digital & Software Core Platform (Modular Monolith)</a></li>
+    <li>🔹 <a href="/en/initial-review/04-ai-transformation/">04. Pragmatic AI Transformation (Customs OCR & Vision)</a></li>
+    <li>🔹 <a href="/en/initial-review/05-execution/">05. Agile Execution, 90-Day Pilots & ADKAR Change</a></li>
+    <li>🔹 <a href="/en/initial-review/06-governance/">06. Lean Governance, KPIs & Financial ROI</a></li>
+    <li>🔹 <a href="/en/initial-review/07-appendix/">07. Appendix, Bilingual Glossary & ADR Records</a></li>
+  </ul>
+  <div class="mt-4">
+    <a href="/en/initial-review/" class="inline-block px-4 py-2 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg">Explore Initial Review Folder ►</a>
   </div>
+</div>
 
-  <p style="font-size: 0.9rem; color: var(--vp-c-text-3);">
-    Redirecting automatically based on browser preference... / انتقال خودکار بر اساس زبان مرورگر...
-  </p>
+<div class="p-5 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
+  <h3 class="text-lg font-bold text-emerald-600 dark:text-emerald-400 mb-2">📂 Folder: Current State Documents (/current-state/)</h3>
+  <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Living operational repository ready for intake and indexing of current business assets:</p>
+  <ul class="space-y-1 text-sm">
+    <li>🔸 <a href="/en/current-state/">Current State Overview & Intake Structure</a></li>
+    <li>🔸 <a href="/en/current-state/guide">New Document Authoring Guide & Standard Template</a></li>
+    <li>🔸 Active Operational Workflows (Sales, Customs, Warehouse)</li>
+    <li>🔸 In-use Applications & Software Catalog</li>
+    <li>🔸 Departmental Spreadsheets & Tracking Logs</li>
+  </ul>
+  <div class="mt-4">
+    <a href="/en/current-state/" class="inline-block px-4 py-2 text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg">Explore Current State Folder ►</a>
+  </div>
+</div>
+
 </div>
