@@ -178,44 +178,61 @@ Executive leadership has three primary strategic pathways:
 
 ---
 
-## 7. Cost & Time Estimation Framework
+## 7. Cost & Budget Scenarios (Anti-False Precision)
 
-A credible price and timeline cannot be manufactured before Discovery is completed. Senior leadership must reject any vendor who presents a firm quote before auditing the system's databases, process flows, and integration touchpoints.
+We strictly reject the practice of manufacturing false precision (e.g., claiming an exact software cost of $341,250 prior to auditing the system). Realistic capital planning requires **scenario ranges based on architectural scope and team size**:
 
-Instead, Arian Khodro establishes a professional **Four-Tier Estimation Framework**:
+### Year 1 Budget Allocation Scenarios
 
-```text
-┌────────────────────────┐      ┌────────────────────────┐      ┌────────────────────────┐      ┌────────────────────────┐
-│ 1. Discovery Baseline  │ ───► │ 2. Work Breakdown (WBS)│ ───► │ 3. Resource Modeling   │ ───► │ 4. Risk & Contingency  │
-│ • Catalog data schemas │      │ • Analysis & design    │      │ • Engineering team size│      │ • Legacy uncertainty   │
-│ • Count manual flows   │      │ • Core Platform build  │      │ • In-house vs outsourced│     │ • Explicit variance    │
-│ • Map integration APIs │      │ • Testing & cutover    │      │ • Cloud/On-prem infra  │      │   range (e.g. ±20%)    │
-└────────────────────────┘      └────────────────────────┘      └────────────────────────┘      └────────────────────────┘
-```
+All figures represent estimated Year 1 expenditure ranges (in IRR Billion equivalent):
 
-### 1. Work Breakdown Structure (WBS) Domains
-Post-Discovery implementation effort will be calculated across eleven discrete work packages:
-- Domain 1: Detailed Business Analysis & Process Optimization
-- Domain 2: Solution & Integration Architecture Design
-- Domain 3: Core Platform Shared Services (IAM, Gateway, MDM)
-- Domain 4: Legacy Tadark Anti-Corruption Adapters
-- Domain 5: High-Priority Web Applications (Customs, Commercial, Parts)
-- Domain 6: Commercial Software Procurement & Configuration (COTS)
-- Domain 7: Automated Data Cleansing & Migration
-- Domain 8: Quality Assurance, Automated Testing & Security Hardening
-- Domain 9: Staging Infrastructure & Production Server Deployment
-- Domain 10: Role-Based User Enablement & Change Management
-- Domain 11: Production Cutover, Hypercare & Post-Launch Operations
+| Budget Component | Conservative Scenario | Balanced Scenario (Recommended) | Aggressive Scenario |
+| :--- | :---: | :---: | :---: |
+| **Engineering & Architecture Team (FTEs)** | 3 FTEs (10 – 14 B IRR) | 5–6 FTEs (20 – 30 B IRR) | 10+ FTEs (45 – 70 B IRR) |
+| **Software Licenses & Developer Tools** | 1 – 2 B IRR | 3 – 5 B IRR | 8 – 15 B IRR |
+| **On-Prem Server Hardware & Hypervisor** | 2 – 3 B IRR (Reuse existing) | 4 – 7 B IRR (RAM/NVMe upgrade) | 12 – 20 B IRR (New server pair) |
+| **Targeted External Advisory / Specialized Sourcing** | 2 – 4 B IRR | 4 – 6 B IRR | 10 – 18 B IRR |
+| **Document AI / OCR Ingestion Benchmarks** | 0 B IRR (Rule-based only) | 1 – 2 B IRR (Lightweight OCR pilot)| 3 – 5 B IRR (Full agentic stack) |
+| **Data Cleansing & Legacy Script Migration** | 1 – 2 B IRR | 2 – 3 B IRR | 5 – 8 B IRR |
+| **Staff Training & Change Management** | 1 B IRR | 2 B IRR | 4 B IRR |
+| **Operational Maintenance & Reserve (10%)** | 1 – 2 B IRR | 3 – 5 B IRR | 8 – 12 B IRR |
+| **Total Estimated Year 1 Commitment** | **18 – 28 B IRR** | **35 – 55 B IRR** | **80 – 130 B IRR** |
 
-### 2. Time Estimation Model
-Durations will be estimated using the **Three-Point Technique (PERT)**:
-$$\text{Expected Duration} = \frac{\text{Optimistic} + 4 \times \text{Most Likely} + \text{Pessimistic}}{6}$$
-
-All milestone dates presented prior to Discovery completion are **Initial Planning Assumptions**, not contractual delivery guarantees.
+### Scenario Characterization & Fit
+- **Conservative (Minimum Capital Risk):** Maintains Tadark as-is, deploys a small 3-person team, avoids any AI, and focuses strictly on building custom Excel-to-Tadark reconciliation scripts and resolving the top 3 spreadsheet failure points.
+- **Balanced (High ROI & Controlled Scope - RECOMMENDED):** Modernizes core vehicle and customs tracking with an in-house Modular Monolith, establishes a read-only Tadark adapter, deploys a Human-in-the-Loop OCR pipeline for foreign shipping manifests, and delivers measurable cycle-time reductions within 90 days.
+- **Aggressive (High Speed & High Risk):** Simultaneous rewrite of dealership portals, customer apps, and warehouse tools. Carries high organizational friction and recruitment bottlenecks.
 
 ---
 
-## 8. Defensible Return on Investment (ROI) Model
+## 8. Process Economics & The Unknowns Registry
+
+A core failure mode of previous transformation proposals was citing percentages (e.g., *"35% labor reduction"*) without establishing empirical baselines. In this business case, every operational bottleneck is tied to empirical measurement:
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                PROCESS ECONOMICS MATRIX                                │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│ • If a cost or volume is verified, it is recorded with source documentation.           │
+│ • If a metric is unmeasured, it is formally registered as:                             │
+│   "UNKNOWN — requires empirical measurement during Phase 1 Discovery"                  │
+│ • Fabricating numbers to appease executive presentations is strictly prohibited.       │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Empirical Bottleneck & Economics Audit
+
+| Process Area | Observed Bottleneck | Monthly Volume | Current Cycle Time | Measured Error Rate | Financial Impact of Delay/Error | Status in Business Case |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Customs Clearance & Dossier Intake** | Manual collation of shipping manifests, proformas, and customs slips into Excel. | `Unknown — requires measurement` | Estimated 4–9 days per shipment batch | `Unknown — requires measurement` | Port demurrage penalties, delayed vehicle release | **UNKNOWN — to be measured in Month 1** |
+| **Vehicle Landed Cost & VIN Margin** | Commercial and Finance cross-reconcile foreign currency allocations in separate sheets. | Approx. 100–300 vehicles / batch | Estimated 3–5 days after customs release | Discrepancies reported in landed tariff | Delayed retail pricing release, margin inaccuracy | **UNKNOWN — to be measured in Month 1** |
+| **Spare Parts Invoicing & Distribution** | Dealership warranty parts requests faxed/emailed, manually entered into Tadark. | Hundreds of line-items monthly | Estimated 2–4 days per dispatch | Parts stockout mismatches reported | Dealership workshop stall, customer dissatisfaction | **UNKNOWN — to be measured in Month 1** |
+| **Dealership Warranty Claims Settlement** | Physical paper claims reviewed manually by technical inspector before credit note. | Dozens of claim packets monthly | Estimated 15–30 days settlement cycle | Disputed warranty labor charges | Friction in dealer network, delayed manufacturer reimbursement | **UNKNOWN — to be measured in Month 1** |
+| **Vehicle Handover & Invoicing** | Sales contract details copied manually from CRM lead into Tadark invoice. | Varies by commercial campaign | Estimated 1–2 hours per delivery dossier | Clerical typos in National ID or VIN | Re-issuance of tax invoices, customer handover latency | **UNKNOWN — to be measured in Month 1** |
+
+---
+
+## 9. Defensible Return on Investment (ROI) Model
 
 We reject manufactured ROI claims (e.g., claiming an unsubstantiated "300% ROI in year one"). A defensible ROI calculation requires factual baseline measurements established during Discovery.
 
@@ -329,6 +346,8 @@ All subsequent investments will be submitted as independent, fully costed decisi
 
 ## 12. Related Strategic & Technical Documentation
 
+- **[Executive Decision Memo for the CEO →](/en/business-case/ceo-memo)** — High-level strategic briefing answering the 12 core CEO questions.
+- **[Architecture Audit & Red-Team Review →](/en/knowledge/audit-and-red-team)** — Rigorous critique of past assumptions and 20-point CTO challenge.
 - **[Step 1: Discovery Guidelines →](/en/roadmap/01-discovery)** — Operational methodology for conducting audits, interviews, and schema extraction.
 - **[Step 2: Software Decision Framework →](/en/roadmap/02-decision-cycle)** — Sourcing criteria for Build vs. Buy vs. Outsource.
 - **[Step 3: Core Platform Concept →](/en/roadmap/03-development-and-core-platform)** — The foundational shared services backbone.
