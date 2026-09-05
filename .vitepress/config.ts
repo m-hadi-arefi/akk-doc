@@ -77,11 +77,65 @@ export default defineConfig({
               ]
             },
             {
-              text: 'دسته‌بندی‌ها (آماده ثبت مستند)',
+              text: 'بخش ۱: شناخت مدیریتی و سازمانی',
+              collapsed: false,
               items: [
-                { text: 'فرآیندهای عملیاتی جاری (آماده بارگذاری)', link: '/fa/current-state/' },
-                { text: 'شناسنامه سیستم‌ها و نرم‌افزارها', link: '/fa/current-state/' },
-                { text: 'رجیستری اکسل‌ها و پایگاه داده‌ها', link: '/fa/current-state/' }
+                { text: '۰۰ — نمای کلی فاز شناخت و خط مبنا', link: '/fa/current-state/00-discovery-overview' },
+                { text: '۰۱ — خلاصه مدیریتی و گزارش کلان', link: '/fa/current-state/01-executive-summary' },
+                { text: '۰۲ — گاه‌شمار جلسات و وقایع‌نگاری', link: '/fa/current-state/02-timeline-and-session-log' },
+                { text: '۰۳ — سازمان، ذی‌نفعان و ماتریس مالکیت', link: '/fa/current-state/03-organization-and-ownership' }
+              ]
+            },
+            {
+              text: 'بخش ۲: زیرساخت، شبکه و عملیات IT',
+              collapsed: false,
+              items: [
+                { text: '۰۴ — شناسنامه نرم‌افزارهای فعال', link: '/fa/current-state/04-software-landscape' },
+                { text: '۰۵ — ارزیابی زیرساخت IT و اتاق سرور', link: '/fa/current-state/05-it-infrastructure' },
+                { text: '۰۶ — عملیات، راهبری و حاکمیت IT', link: '/fa/current-state/06-it-operations-and-governance' },
+                { text: '۰۷ — تداوم کسب‌وکار و بازیابی بحران', link: '/fa/current-state/07-business-continuity-and-dr' },
+                { text: '۲۰ — ارزیابی شبکه و پایداری ارتباطات', link: '/fa/current-state/20-network-and-connectivity' },
+                { text: '۲۱ — ارزیابی امنیت سایبری و دسترسی‌ها', link: '/fa/current-state/21-security-assessment' },
+                { text: '۲۲ — ارزیابی سیستم تدارک و نوسازی', link: '/fa/current-state/22-legacy-systems-assessment' }
+              ]
+            },
+            {
+              text: 'بخش ۳: زنجیره تجاری، فروش و CRM',
+              collapsed: false,
+              items: [
+                { text: '۰۸ — شناخت نیازمندی‌های فروش و CRM', link: '/fa/current-state/08-sales-and-crm-discovery' },
+                { text: '۰۹ — نقشه فرآیند فروش (As-Is)', link: '/fa/current-state/09-sales-process-as-is' },
+                { text: '۱۰ — نیازمندی‌های فروش هدف (To-Be)', link: '/fa/current-state/10-sales-process-to-be' },
+                { text: '۱۱ — بررسی بازار و تأمین‌کنندگان CRM', link: '/fa/current-state/11-crm-market-and-vendors' },
+                { text: '۱۲ — چارچوب ارزیابی و ماتریس نمره‌دهی CRM', link: '/fa/current-state/12-crm-evaluation-framework' },
+                { text: '۱۳ — پلتفرم فروش جهان‌گستر و واردات', link: '/fa/current-state/13-jahan-gostar-platform' },
+                { text: '۱۴ — معماری سامانه نوین فروش', link: '/fa/current-state/14-new-sales-platform-architecture' }
+              ]
+            },
+            {
+              text: 'بخش ۴: انبارداری، لجستیک و یکپارچگی داده‌ها',
+              collapsed: false,
+              items: [
+                { text: '۱۵ — شناخت تخصصی سامانه انبار (WMS)', link: '/fa/current-state/15-wms-discovery' },
+                { text: '۱۶ — یکپارچگی WMS و مرجعیت موجودی', link: '/fa/current-state/16-wms-integration-and-inventory' },
+                { text: '۱۷ — وابستگی به وندور WMS و راهبرد خروج', link: '/fa/current-state/17-wms-vendor-dependency-and-exit' },
+                { text: '۱۸ — نقشه اتصالات و چشم‌انداز یکپارچگی', link: '/fa/current-state/18-integration-landscape' },
+                { text: '۱۹ — ماتریس کانونی مالکیت داده (SoR)', link: '/fa/current-state/19-data-ownership-and-source-of-truth' },
+                { text: '۲۳ — مدیریت داده‌های پایه (MDM) و کیفیت', link: '/fa/current-state/23-master-data-and-quality' }
+              ]
+            },
+            {
+              text: 'بخش ۵: تصمیمات، بدهی فنی و برنامه‌ها',
+              collapsed: false,
+              items: [
+                { text: '۲۴ — تصمیمات معماری، فرضیات و فکت‌ها', link: '/fa/current-state/24-architecture-decisions-and-hypotheses' },
+                { text: '۲۵ — دفتر کل بدهی‌های فنی (Technical Debt)', link: '/fa/current-state/25-technical-debt-ledger' },
+                { text: '۲۶ — ثبت جامع ریسک‌ها و مسائل (RAID)', link: '/fa/current-state/26-raid-log' },
+                { text: '۲۷ — تحلیل شکاف قابلیت‌های سازمانی', link: '/fa/current-state/27-capability-gap-analysis' },
+                { text: '۲۸ — اصول بنیادین معماری هدف', link: '/fa/current-state/28-target-architecture-principles' },
+                { text: '۲۹ — اقدامات فوری و دستاوردهای سریع', link: '/fa/current-state/29-quick-wins-and-actions' },
+                { text: '۳۰ — برنامه اعتبارسنجی روز دوم (Day 02)', link: '/fa/current-state/30-day-02-validation-plan' },
+                { text: '۳۱ — ارزیابی نهایی شناخت و گیت حاکمیت', link: '/fa/current-state/31-discovery-review-and-signoff' }
               ]
             },
             {
@@ -268,18 +322,72 @@ export default defineConfig({
           ],
           '/en/current-state/': [
             {
-              text: '📂 Current State Intake Repository',
+              text: '📂 Current State Discovery Repository',
               items: [
                 { text: 'Current State Overview', link: '/en/current-state/' },
                 { text: 'Authoring Guide & Template', link: '/en/current-state/guide' }
               ]
             },
             {
-              text: 'Intake Categories (Ready)',
+              text: 'Part 1: Executive & Organization',
+              collapsed: false,
               items: [
-                { text: 'Operational Processes & SOPs', link: '/en/current-state/' },
-                { text: 'In-use Applications Catalog', link: '/en/current-state/' },
-                { text: 'Spreadsheet & Data Registry', link: '/en/current-state/' }
+                { text: '00 — Discovery Overview & Baseline', link: '/en/current-state/00-discovery-overview' },
+                { text: '01 — Executive Summary & Baseline', link: '/en/current-state/01-executive-summary' },
+                { text: '02 — Timeline & Session Log', link: '/en/current-state/02-timeline-and-session-log' },
+                { text: '03 — Organization & Ownership', link: '/en/current-state/03-organization-and-ownership' }
+              ]
+            },
+            {
+              text: 'Part 2: Infrastructure & Operations',
+              collapsed: false,
+              items: [
+                { text: '04 — Current Software Landscape', link: '/en/current-state/04-software-landscape' },
+                { text: '05 — IT Infrastructure Assessment', link: '/en/current-state/05-it-infrastructure' },
+                { text: '06 — IT Operations & Governance', link: '/en/current-state/06-it-operations-and-governance' },
+                { text: '07 — Business Continuity & DR', link: '/en/current-state/07-business-continuity-and-dr' },
+                { text: '20 — Network & Connectivity', link: '/en/current-state/20-network-and-connectivity' },
+                { text: '21 — Security Assessment', link: '/en/current-state/21-security-assessment' },
+                { text: '22 — Legacy Systems Assessment (Tadark)', link: '/en/current-state/22-legacy-systems-assessment' }
+              ]
+            },
+            {
+              text: 'Part 3: Commercial Operations, Sales & CRM',
+              collapsed: false,
+              items: [
+                { text: '08 — Sales & CRM Discovery', link: '/en/current-state/08-sales-and-crm-discovery' },
+                { text: '09 — Sales Process (As-Is)', link: '/en/current-state/09-sales-process-as-is' },
+                { text: '10 — Sales Process Requirements (To-Be)', link: '/en/current-state/10-sales-process-to-be' },
+                { text: '11 — CRM Market & Vendors', link: '/en/current-state/11-crm-market-and-vendors' },
+                { text: '12 — CRM Evaluation Framework', link: '/en/current-state/12-crm-evaluation-framework' },
+                { text: '13 — Jahan Gostar / Import Platform', link: '/en/current-state/13-jahan-gostar-platform' },
+                { text: '14 — New Sales Platform Architecture', link: '/en/current-state/14-new-sales-platform-architecture' }
+              ]
+            },
+            {
+              text: 'Part 4: Warehousing & Data Integration',
+              collapsed: false,
+              items: [
+                { text: '15 — WMS Discovery', link: '/en/current-state/15-wms-discovery' },
+                { text: '16 — WMS Integration & Inventory Ownership', link: '/en/current-state/16-wms-integration-and-inventory' },
+                { text: '17 — WMS Vendor Dependency & Exit Strategy', link: '/en/current-state/17-wms-vendor-dependency-and-exit' },
+                { text: '18 — Integration Landscape', link: '/en/current-state/18-integration-landscape' },
+                { text: '19 — Data Ownership & Source of Truth', link: '/en/current-state/19-data-ownership-and-source-of-truth' },
+                { text: '23 — Master Data & Data Quality', link: '/en/current-state/23-master-data-and-quality' }
+              ]
+            },
+            {
+              text: 'Part 5: Architecture, Debt & Action Plans',
+              collapsed: false,
+              items: [
+                { text: '24 — Architecture Decisions & Hypotheses', link: '/en/current-state/24-architecture-decisions-and-hypotheses' },
+                { text: '25 — Technical Debt Ledger', link: '/en/current-state/25-technical-debt-ledger' },
+                { text: '26 — Risks, Assumptions, Issues & Dependencies', link: '/en/current-state/26-raid-log' },
+                { text: '27 — Capability Gap Analysis', link: '/en/current-state/27-capability-gap-analysis' },
+                { text: '28 — Target Architecture Principles', link: '/en/current-state/28-target-architecture-principles' },
+                { text: '29 — Quick Wins & Immediate Actions', link: '/en/current-state/29-quick-wins-and-actions' },
+                { text: '30 — Day 02 Validation Plan', link: '/en/current-state/30-day-02-validation-plan' },
+                { text: '31 — Discovery Review & Executive Sign-off', link: '/en/current-state/31-discovery-review-and-signoff' }
               ]
             },
             {
