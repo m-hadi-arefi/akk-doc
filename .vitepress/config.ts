@@ -40,9 +40,34 @@ export default defineConfig({
         nav: [
           { text: 'صفحه اصلی', link: '/fa/' },
           { text: '📁 داکیومنت‌های اولیه', link: '/fa/initial-review/' },
-          { text: '📂 داکیومنت‌های وضعیت فعلی', link: '/fa/current-state/' }
+          { text: '📂 داکیومنت‌های وضعیت فعلی', link: '/fa/current-state/' },
+          { text: '📋 گزارش‌های روزانه (Work Log)', link: '/fa/work-log/' }
         ],
         sidebar: {
+          '/fa/work-log/': [
+            {
+              text: '📋 گزارش‌های روزانه و یادداشت‌های کاری',
+              items: [
+                { text: 'نمای کلی گزارش‌های روزانه (Work Logs)', link: '/fa/work-log/' }
+              ]
+            },
+            {
+              text: '👤 گزارش‌های محمد هادی عارفی (Arefi)',
+              collapsed: false,
+              items: [
+                { text: 'فهرست وقایع‌نگاری عارفی', link: '/fa/work-log/arefi/' },
+                { text: 'روز ۰۱: شناخت IT، WMS و نیاز CRM (۱۴۰۵/۰۶/۱۴)', link: '/fa/work-log/arefi/day-01' }
+              ]
+            },
+            {
+              text: 'سایر بخش‌ها',
+              items: [
+                { text: '📁 ورود به داکیومنت‌های اولیه', link: '/fa/initial-review/' },
+                { text: '📂 داکیومنت‌های وضعیت فعلی', link: '/fa/current-state/' },
+                { text: '🏠 بازگشت به صفحه اصلی', link: '/fa/' }
+              ]
+            }
+          ],
           '/fa/current-state/': [
             {
               text: '📂 مخزن داکیومنت‌های وضعیت فعلی',
@@ -181,6 +206,7 @@ export default defineConfig({
               items: [
                 { text: '📁 داکیومنت‌های اولیه (بررسی اولیه)', link: '/fa/initial-review/' },
                 { text: '📂 داکیومنت‌های وضعیت فعلی', link: '/fa/current-state/' },
+                { text: '📋 گزارش‌های روزانه و یادداشت‌های کاری (Work Log)', link: '/fa/work-log/' },
                 { text: '📝 راهنمای افزودن مستند جدید', link: '/fa/current-state/guide' }
               ]
             }
@@ -212,9 +238,34 @@ export default defineConfig({
         nav: [
           { text: 'Home', link: '/en/' },
           { text: '📁 Initial Documents', link: '/en/initial-review/' },
-          { text: '📂 Current State', link: '/en/current-state/' }
+          { text: '📂 Current State', link: '/en/current-state/' },
+          { text: '📋 Work Logs', link: '/en/work-log/' }
         ],
         sidebar: {
+          '/en/work-log/': [
+            {
+              text: '📋 Transformation Work Logs & Journals',
+              items: [
+                { text: 'Work Logs Overview', link: '/en/work-log/' }
+              ]
+            },
+            {
+              text: '👤 Mohammad Hadi Arefi Logs',
+              collapsed: false,
+              items: [
+                { text: 'Arefi Work Logs Index', link: '/en/work-log/arefi/' },
+                { text: 'Day 01: IT Discovery, WMS & CRM (2026-09-05)', link: '/en/work-log/arefi/day-01' }
+              ]
+            },
+            {
+              text: 'Other Sections',
+              items: [
+                { text: '📁 Initial Review Documents', link: '/en/initial-review/' },
+                { text: '📂 Current State Documents', link: '/en/current-state/' },
+                { text: '🏠 Back to Home', link: '/en/' }
+              ]
+            }
+          ],
           '/en/current-state/': [
             {
               text: '📂 Current State Intake Repository',
@@ -353,6 +404,7 @@ export default defineConfig({
               items: [
                 { text: '📁 Initial Review Documents', link: '/en/initial-review/' },
                 { text: '📂 Current State Documents', link: '/en/current-state/' },
+                { text: '📋 Transformation Work Logs', link: '/en/work-log/' },
                 { text: '📝 New Document Guide', link: '/en/current-state/guide' }
               ]
             }

@@ -10,8 +10,11 @@ hero:
       text: "📁 داکیومنت‌های اولیه"
       link: /fa/initial-review/
     - theme: alt
-      text: "📂 داکیومنت‌های وضعیت فعلی"
+      text: "📂 وضعیت فعلی"
       link: /fa/current-state/
+    - theme: alt
+      text: "📋 گزارش‌های روزانه (Work Log)"
+      link: /fa/work-log/
     - theme: alt
       text: "English Version 🇬🇧"
       link: /en/
@@ -21,10 +24,14 @@ features:
     title: "داکیومنت‌های اولیه (بررسی اولیه)"
     details: "دسترسی مستقیم به کلیه مستندات ۸ گانه تحول سازمانی، معماری نرم‌افزار، هوش مصنوعی و حاکمیت."
     link: /fa/initial-review/
-  - icon: 📋
+  - icon: 📂
     title: "داکیومنت‌های وضعیت فعلی"
     details: "مخزن اختصاصی آماده جهت بارگذاری و ثبت مستندات فرآیندهای در جریان و شناسنامه سیستم‌های شرکت."
     link: /fa/current-state/
+  - icon: 📋
+    title: "گزارش‌های روزانه و لاگ کاری (Work Log)"
+    details: "وقایع‌نگاری روزانه، جلسات فنی، شناخت وضعیت موجود، بررسی WMS، فروش و CRM به قلم تیم تحول."
+    link: /fa/work-log/
   - icon: 📝
     title: "راهنمای افزودن مستند جدید"
     details: "آموزش گام‌به‌گام و قالب استاندارد Markdown برای ثبت آسان مستندات در سامانه."
@@ -69,6 +76,19 @@ features:
   </ul>
   <div class="mt-4">
     <a href="/fa/current-state/" class="inline-block px-4 py-2 text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg">ورود به پوشه وضعیت فعلی ◄</a>
+  </div>
+</div>
+
+<div class="p-5 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50 md:col-span-2">
+  <h3 class="text-lg font-bold text-amber-600 dark:text-amber-400 mb-2">📋 پوشه: گزارش‌های روزانه و لاگ کاری (/work-log/)</h3>
+  <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">وقایع‌نگاری روزانه تحول، جلسات فنی میدانی و یادداشت‌های ارزیابی سیستم‌ها:</p>
+  <ul class="space-y-1 text-sm">
+    <li>🔹 <a href="/fa/work-log/">نمای کلی گزارش‌های روزانه تحول (Work Logs)</a></li>
+    <li>🔹 <a href="/fa/work-log/arefi/">گزارش‌های اختصاصی محمد هادی عارفی (Arefi)</a></li>
+    <li>🔹 <a href="/fa/work-log/arefi/day-01">روز اول: بررسی زیرساخت IT، نرم‌افزار WMS و نیازمندی‌های CRM</a></li>
+  </ul>
+  <div class="mt-4">
+    <a href="/fa/work-log/" class="inline-block px-4 py-2 text-xs font-semibold text-white bg-amber-600 hover:bg-amber-700 rounded-lg">مشاهده گزارش‌های روزانه ◄</a>
   </div>
 </div>
 
