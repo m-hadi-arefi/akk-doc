@@ -13,9 +13,6 @@ hero:
       text: "📂 Current State"
       link: /en/current-state/
     - theme: alt
-      text: "📋 Work Logs"
-      link: /en/work-log/
-    - theme: alt
       text: "مرور به فارسی 🇮🇷"
       link: /fa/
 
@@ -28,10 +25,6 @@ features:
     title: "Current State Repository"
     details: "Living documentation intake space for operational manuals, active workflows, software catalogs, and spreadsheets."
     link: /en/current-state/
-  - icon: 📋
-    title: "Transformation Work Logs"
-    details: "Day-by-day operational discovery journals, WMS & CRM technical reviews, and field assessment notes."
-    link: /en/work-log/
   - icon: 🇮🇷
     title: "پرتال مستندات فارسی (Persian)"
     details: "دسترسی کامل به تمامی مستندات معماری، شناخت میدانی، هوش مصنوعی و نقشه راه تحول به زبان فارسی."
@@ -76,19 +69,6 @@ features:
   </ul>
   <div class="mt-4">
     <a href="/en/current-state/" class="inline-block px-4 py-2 text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg">Explore Current State Folder ►</a>
-  </div>
-</div>
-
-<div class="p-5 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50 md:col-span-2">
-  <h3 class="text-lg font-bold text-amber-600 dark:text-amber-400 mb-2">📋 Folder: Transformation Work Logs (/work-log/)</h3>
-  <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Daily operational journals, stakeholder interviews, and system evaluation notes:</p>
-  <ul class="space-y-1 text-sm">
-    <li>🔹 <a href="/en/work-log/">Transformation Work Logs Overview</a></li>
-    <li>🔹 <a href="/en/work-log/arefi/">Mohammad Hadi Arefi Operational Logs</a></li>
-    <li>🔹 <a href="/en/work-log/arefi/day-01">Day 01: IT Infrastructure Assessment, WMS & CRM Requirements</a></li>
-  </ul>
-  <div class="mt-4">
-    <a href="/en/work-log/" class="inline-block px-4 py-2 text-xs font-semibold text-white bg-amber-600 hover:bg-amber-700 rounded-lg">Explore Work Logs ►</a>
   </div>
 </div>
 
